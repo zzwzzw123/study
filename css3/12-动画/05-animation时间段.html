@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			@-webkit-keyframes donghua{
+				
+				0% {
+					left: 0;
+					top: 0;
+				}			
+				
+				25% {
+					left: 500px;
+					top: 0;
+				}	
+				
+				50% {
+					left: 500px;
+					top:500px;
+				}
+				
+				75% {
+					left: 0;
+					top:500px;
+				}
+				
+				100% {
+					left: 0;
+					top: 0;
+				}
+				
+			}	
+			
+			
+			#div1 {
+				width: 100px;
+				height: 100px;
+				background: #00CCCC;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				
+				-webkit-animation: donghua 10s infinite;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>

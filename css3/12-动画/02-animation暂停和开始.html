@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*自定义动画*/
+			@keyframes donghua{
+				from{
+					width: 50px;
+				}
+				to{
+					width: 800px;
+					background: orange;
+				}
+			}
+			
+			@-webkit-keyframes donghua{
+				from{
+					width: 50px;
+				}
+				to{
+					width: 800px;
+					background: orange;
+				}
+			}
+			
+			#div1{
+				width: 50px;
+				height: 100px;
+				background: #00CCCC;
+				
+				/*应用动画的名称*/
+				animation-name: donghua;
+				/*动画执行的时长*/
+				animation-duration: 1s;
+				/*动画类型*/
+				animation-timing-function: ease-in;
+				/*延迟时间*/
+				animation-delay: 1s;
+				/*动画执行次数*/
+				animation-iteration-count: 5;
+				/*反向运动*/
+				animation-direction: alternate;
+				/*动画最终状态*/
+				animation-fill-mode: forwards;
+				/*动画状态*/
+				animation-play-state: running;
+				
+				/*应用动画的名称*/
+				-webkit-animation-name: donghua;
+				/*动画执行的时长*/
+				-webkit-animation-duration: 1s;
+				/*动画类型*/
+				-webkit-animation-timing-function: ease-in;
+				/*延迟时间*/
+				-webkit-animation-delay: 1s;
+				/*动画执行次数*/
+				-webkit-animation-iteration-count: 5;
+				/*反向运动*/
+				-webkit-animation-direction: alternate;
+				/*动画最终状态*/
+				-webkit-animation-fill-mode: forwards;
+				/*动画状态*/
+				-webkit-animation-play-state: running;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			动画
+		</div>
+		
+		<input type="button" value="暂停" onclick="stop();"/>
+		<input type="button" value="运动" onclick="start();"/>
+		
+		<script type="text/javascript">
+			function stop () {
+				var div1 = document.getElementById('div1');
+				div1.style.animationPlayState = 'paused';
+				div1.style.webkitAnimationPlayState = 'paused';
+			}
+			
+			function start () {
+				var div1 = document.getElementById('div1');
+				div1.style.animationPlayState = 'running';
+				div1.style.webkitAnimationPlayState = 'running';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*选中状态*/
+			input[name=sex]:checked+label{
+				color:red;
+				background: gray;
+			}
+			
+			/*禁用状态*/
+			input[type=button]:disabled{
+				background: #ffffff;
+				color: red;
+			}
+			
+			/*启动状态*/
+			input[type=button]:enabled{
+				background: #000000;
+				color: green;
+			}
+			
+			/*选择文本*/
+			p::selection{
+				background: green;
+				color: orange;
+			}
+			
+			/*针对火狐兼容*/
+			p::-moz-selection{
+				background: green;
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="radio" name="sex" id="boy" />
+		<label for="boy">男</label>
+		<input type="radio" name="sex" id="girl" />
+		<label for="girl">女</label>
+		
+		<input type="button" value="立即注册"  disabled/>
+		<input type="button" value="立即注册" />
+		
+		<p>这段文字选中后看效果</p>
+	</body>
+</html>

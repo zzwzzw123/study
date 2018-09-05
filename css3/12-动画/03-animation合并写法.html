@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*自定义动画*/
+			@keyframes donghua{
+				from{
+					width: 50px;
+				}
+				to{
+					width: 800px;
+					background: orange;
+				}
+			}
+			
+			@-webkit-keyframes donghua{
+				from{
+					width: 50px;
+				}
+				to{
+					width: 800px;
+					background: orange;
+				}
+			}
+			
+			#div1{
+				width: 50px;
+				height: 100px;
+				background: #00CCCC;
+				
+				animation: donghua 2s ease-in 1s infinite alternate;
+				-webkit-animation: donghua 2s ease-in 1s infinite alternate;
+				-o-animation: donghua 2s ease-in 1s infinite alternate;
+				-ms-animation: donghua 2s ease-in 1s infinite alternate;
+				-moz-animation: donghua 2s ease-in 1s infinite alternate;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			动画
+		</div>
+	</body>
+</html>

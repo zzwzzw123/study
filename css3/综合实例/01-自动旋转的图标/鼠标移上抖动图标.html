@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,li{
+				list-style-type: none;
+			}
+			
+			.content{
+				width: 540px;
+				height: 95px;
+				text-align: center;
+				margin: 0 auto;
+			}
+			
+			.content li{
+				float: left;
+				width: 90px;
+				height: 95px;
+				display: block;
+			}
+			
+			.content li a{
+				display: block;
+				text-decoration: none;
+				padding-top: 60px;
+				color: #666666;
+				font-size: 14px;
+				background: url(icons.png) no-repeat;
+				line-height: 35px;
+			}
+			
+			@-webkit-keyframes donghua{
+				0%{
+					transform: rotateZ(15deg);
+				}
+
+				100${
+					transform: rotateZ(-15deg);
+				}
+			}
+			
+			.content li .icon1{
+				background-position: 16px -197px;
+			}
+			
+			.content li:hover .icon1{
+				transition: all 1s;
+				border: 1px solid #CCCCCC;
+				box-shadow: 0px 0px 20px #CCCCCC;
+				-webkit-animation: donghua 100ms 100;
+			}
+			
+			.content li .icon2{
+				background-position: -80px -197px;
+			}
+			
+			.content li:hover .icon2{
+				transition: all 1s;
+				border: 1px solid #CCCCCC;
+				box-shadow: 0px 0px 20px #CCCCCC;
+				-webkit-animation: donghua 100ms 100;
+			}
+			
+			.content li .icon3{
+				background-position: -174px -197px;
+			}
+			
+			.content li:hover .icon3{
+				transition: all 1s;
+				border: 1px solid #CCCCCC;
+				box-shadow: 0px 0px 20px #CCCCCC;
+				-webkit-animation: donghua 100ms 100;
+			}
+			
+			.content li .icon4{
+				background-position: -269px -197px;
+			}
+			
+			.content li:hover .icon4{
+				transition: all 1s;
+				border: 1px solid #CCCCCC;
+				box-shadow: 0px 0px 20px #CCCCCC;
+				-webkit-animation: donghua 100ms 100;
+			}
+			
+			.content li .icon5{
+				background-position: -364px -197px;
+			}
+			
+			.content li:hover .icon5{
+				transition: all 1s;
+				border: 1px solid #CCCCCC;
+				box-shadow: 0px 0px 20px #CCCCCC;
+				-webkit-animation: donghua 100ms 100;
+			}
+			
+			.content li .icon6{
+				background-position: -459px -197px;
+			}
+			
+			.content li:hover .icon6{
+				transition: all 1s;
+				border: 1px solid #CCCCCC;
+				box-shadow: 0px 0px 20px #CCCCCC;
+				-webkit-animation: donghua 100ms 100;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="content">
+			<li><a href="" class="icon1">论文提交</a></li>
+			<li><a href="" class="icon2">vpn服务</a></li>
+			<li><a href="" class="icon3">研修室预约</a></li>
+			<li><a href="" class="icon4">馆长信箱</a></li>
+			<li><a href="" class="icon5">失物招领</a></li>
+			<li><a href="" class="icon6">入馆指南</a></li>
+		</ul>
+	</body>
+</html>

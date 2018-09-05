@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 200px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.box img{
+				display: block;
+				width: 300px;
+				height: 200px;
+			}
+			
+			.box .tips{
+				width:300px;
+				height:200px;
+				background: rgba(0,0,0,0.7);
+				color: #FFFFFF;
+				text-align: center;
+				line-height: 200px;
+				position: absolute;
+				top: 0px;
+				left: 300px;
+			}
+			
+			.box:hover .tips{
+				transition: all 2s;
+				transform: translateX(-100%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="g3.jpg"/>
+			<div class="tips">
+				这是图片的提示文字
+			</div>
+		</div>
+	</body>
+</html>

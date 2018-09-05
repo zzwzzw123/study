@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p[align]{
+				color:green;
+			}
+			
+			/*p开头*/
+			p[id^=p]{
+				color: blue;
+			}
+			
+			/*x结尾*/
+			p[id$=x]{
+				color: red;
+			}
+			
+			/*包含box*/
+			p[id*=o]{
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="box">红色</p>
+		<p id="p1">蓝色</p>
+		<p id="p2">蓝色</p>
+		<p align="center">绿色</p>
+		<p id="myboox">橘黄色</p>
+	</body>
+</html>

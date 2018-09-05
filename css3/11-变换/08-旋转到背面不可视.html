@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 236px;
+				height: 236px;
+				border: 1px solid #000;
+				margin: 150px;
+				
+				/*远近度，一定要加在产生3D效果的元素的父元素上*/
+				perspective: 400px;
+			}
+			
+			#div1 img{
+				display: block;
+				transition: all 3s;
+				
+				/*旋转到背面不可视*/
+				backface-visibility: hidden;
+			}
+			
+			#div1:hover img{
+				transform: rotateY(180deg);
+				/*transform: rotateX(180deg);*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<img src="../images/1.jpg"/>
+		</div>
+	</body>
+</html>

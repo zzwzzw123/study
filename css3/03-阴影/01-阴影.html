@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: #0cc;
+				margin: 100px;
+			}
+			
+			#left-top{
+				box-shadow: -10px -10px;
+			}
+			
+			#right-top{
+				box-shadow: 10px -10px;
+			}
+			
+			#left-bottom{
+				box-shadow: -10px 10px;
+			}
+			
+			#right-bottom{
+				box-shadow: 10px 10px;
+			}
+			
+			#biur{
+				/*水平偏移 垂直偏移 模糊度*/
+				box-shadow: 10px 10px 20px;
+			}
+			
+			#color{
+				/*水平偏移 垂直偏移 模糊度 颜色*/
+				box-shadow: 10px 10px 20px blue;
+			}
+			
+			#yanshen{
+				/*水平偏移 垂直偏移 模糊度 延伸 颜色*/
+				box-shadow: 10px 10px 10px 10px #ccc;
+			}
+			
+			#inside{
+				/*水平偏移 垂直偏移 模糊度 内阴影*/
+				box-shadow: 10px 10px 20px inset;
+			}
+			</style>
+	</head>
+	<body>
+		<div id="left-top"></div>
+		<div id="right-top"></div>
+		<div id="left-bottom"></div>
+		<div id="right-bottom"></div>
+		<div id="biur"></div>
+		<div id="color"></div>
+		<div id="yanshen"></div>
+		<div id="inside"></div>
+	</body>
+</html>

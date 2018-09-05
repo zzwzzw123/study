@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: #0cc;
+				
+				transition: all 2s;
+			}
+		</style>
+		<script type="text/javascript">
+			//dispaly无法显示过渡，可以使用透明度、宽度、高度
+			function m1(){
+				var div1 = document.getElementById('div1');
+//				div1.style.display = 'none';
+//				div1.style.opacity = 0;
+				div1.style.height = '0px';
+				div1.style.width = '0px';
+			}
+			
+			function m2(){
+				var div1 = document.getElementById('div1');
+//				div1.style.display = 'block';
+//				div1.style.opacity = 1;
+				div1.style.height ='200px';
+				div1.style.width ='200px';
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		<input type="button" value="隐藏" onclick="m1();"/>
+		<input type="button" value="显示" onclick="m2();"/>
+	</body>
+</html>

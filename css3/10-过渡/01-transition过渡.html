@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 100px;
+				background: #00CCCC;
+				
+				/*设置参与过渡的属性*/
+				transition-property: width;
+				/*动画执行的时长*/
+				transition-duration: 02s;
+				/* 动画的类型*/
+				transition-timing-function: ease-out;
+				/*延迟时间*/
+				transition-delay: 0.5s;
+			}
+			
+			#div1:hover{
+				width: 800px;
+				background: orange;
+				font-size: 36px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			这是过渡效果
+		</div>
+	</body>
+</html>

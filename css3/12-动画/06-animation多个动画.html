@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			@-webkit-keyframes donghua{
+				
+				0% {
+					left: 0;
+				}
+				
+				100% {
+					left: 800px;
+					transform: rotate(1080deg);
+				}				
+			}
+			
+			@-webkit-keyframes donghua2{
+				
+				0% {
+					left: 800px;
+				}
+				
+				100% {
+					left: 0px;
+					transform: rotate(-1080deg);
+				}				
+			}	
+			
+			
+			#div1 {
+				width: 100px;
+				height: 100px;
+				background: #00CCCC;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 0;	
+				text-align: center;
+				line-height: 100px;
+				
+				-webkit-animation: donghua 10s forwards,donghua2 10s 20s forwards;			
+			}
+			
+			#div2 {
+				width: 100px;
+				height: 100px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 150px;	
+				text-align: center;
+				line-height: 100px;	
+				
+				-webkit-animation: donghua 10s 10s forwards;		
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">蓝色</div>
+		<div id="div2">红色</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<label for="boy">
+			<input type="radio" name="sex" id="boy" value="男"/>先生
+		</label>
+		<label for="girl">
+			<input type="radio" name="sex" id="girl" value="女" />女士
+		</label>
+		<input type="button" value="测试" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				
+				var sex = document.getElementsByName('sex');
+				
+				var str = '';
+				
+				for (var i = 0;i < sex.length;i ++) {
+					if (sex[i].checked) {
+						str = sex[i].value;
+						break;
+					}
+				}
+				
+				if (str == '') {
+					alert('请选择一个性别');
+				} else {
+					alert('选择了：' + str);
+				}
+			}
+		</script>
+	</body>
+</html>

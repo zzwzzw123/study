@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--斐波那契数列：1 1 2 3 5 8 13 21 ......
+		输出10个-->
+		<script type="text/javascript">
+			var a = 1;
+			var b = 1;
+			document.write('1&nbsp;1&nbsp');
+			for (var i = 1;i <= 8;i ++) {
+				var c = b;
+				b = a + b;
+				a = c;
+				document.write(b + '&nbsp');
+			}
+		</script>
+		
+			<script type="text/javascript">
+			var a = 0;
+			var b = 1;
+			for (var i = 1;i <= 10;i ++) {
+				a = a + b;
+				b = a - b;
+				document.write(a + '&nbsp');
+			}
+		</script>
+	</body>
+</html>

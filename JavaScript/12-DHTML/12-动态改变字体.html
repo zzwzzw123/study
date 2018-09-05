@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1" align="center" width="500">
+			<tr>
+				<td>
+					字号
+					<a href="javascript:changeSize(36);">特大</a>
+					<a href="javascript:changeSize(24);">大</a>
+					<a href="javascript:changeSize(16);">中</a>
+					<a href="javascript:changeSize(12);">小</a>
+					颜色
+					<a href="javascript:changecolor('black')">黑色</a>
+					<a href="javascript:changecolor('blue')">蓝色</a>
+					<a href="javascript:changecolor('green')">绿色</a>
+					<a href="javascript:changecolor('red')">红色</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size: 14px;" id="td1">
+					要将 LABEL 绑定到其它的控件，请将 LABEL 元素的 FOR 属性设置为与该控件的 ID 相同。将 LABEL 绑定到控件的 NAME 属性毫无用处。但是，要提交表单，你必须为将 LABEL 元素所绑定到的控件指定 NAME。
+
+					有两种方法给所指定的快捷键添加下划线。LABEL 元素所支持的丰富文本使得在标签文本中把由 ACCESSKEY 属性所指定的快捷键字符两侧加上 U 元素成为可能。如果你更愿意使用样式表(CSS)来应用格式化样式，可以将该字符包含在 SPAN 中，并设置样式为“text-decoration: underline”。
+					
+					如果用户单击 LABEL，则会先触发 LABEL 上的 onclick 事件，然后触发由 htmlFor 属性所指定的控件上的 onclick 事件。按下 LABEL 设定的快捷键将设置焦点但并不触发 onclick 事件。
+					
+					标签不允许嵌套。
+					
+					此元素在 Microsoft? Internet Explorer 4.0 的 HTML 和脚本中可用。
+					
+					此元素是内嵌元素。
+					
+					此元素需要关闭标签。
+				</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			function changeSize(size) {
+				var td1 = document.getElementById('td1');
+				td1.style.fontSize = size + 'px';
+			}
+			
+			function changecolor(color) {
+				var td1 = document.getElementById('td1');
+				td1.style.color = color;
+			}
+		</script>
+	</body>
+</html>

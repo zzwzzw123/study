@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			输入的字超过100字，文字娴熟红色，提示“已经超出XX字”，
+			如果每页超出，文字绿色，提示“还可以输入XX字”
+		-->
+		<table border="1" align="center">
+			<tr>
+				<td>
+					<span id="s1">还可以输入100字</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="t1" rows="10" cols="50" ></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					ctrl+回车发送留言
+				</td>
+			</tr>
+		</table>
+		<br /><br />
+		<div id="box">
+			
+		</div>
+		
+		<script type="text/javascript">
+			var max = 100;//最多输入的字符
+			
+			window.onload = function() {
+				var t1 = document.getElementById('t1');
+				
+				var s1 = document.getElementById('s1');
+				
+				var box = document.getElementById('box')
+				
+				function inputTips() {
+					s1.innerHTML = '还可以输入'+ (max - t1.value.length) + '字';
+					
+					if (max - t1.value.length < 0) {
+						s1.style.color = 'red';
+					} else {
+						s1.style.color = 'green';
+					}
+				}
+				
+				//定时调用输入字数提示，防止粘贴
+				window.setInterval(inputTips,500);
+				
+				document.onkeyup = function(e) {
+					
+					inputTips();
+
+					e = window.event || e;
+				
+					if (e.ctrlKey && e.keyCode == 13) {
+						
+						if (t1.value == '') {
+							alert('不能发送空内容');
+							return;
+						}
+						
+						if (t1.value.length > 100) {
+							alert('内容超过一百字！');
+							return;
+						}
+						box.innerHTML += t1.value + '<hr>' + '<br>';
+						t1.value = '';
+					} 
+				}
+			}
+		</script>
+	</body>
+</html>

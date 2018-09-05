@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="ajax请求" id="btn1"/>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					/**
+					 * ajax的完整语法
+					 */
+					$.ajax({
+						url:'RequestServlet',//请求url
+						type:'GET',//请求方式 GET POST
+						dataType:'text',//响应的类型
+						data:{username:'tom',userpwd:'123456'},//请求参数
+						success:function(data,status,xhr) {
+							//请求成功回调函数
+							alert(data);
+						},
+						error:function(xhr,errorStatus,errorText) {
+							//请求失败回调函数
+							alert('请求失败：' + errorStatus + ',' + errorText)
+						}
+					});
+					
+					
+				})
+				
+				
+			});
+		</script>
+	</body>
+</html>

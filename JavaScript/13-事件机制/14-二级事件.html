@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="注册2级事件" id="btn1"/>
+		<input type="button" value="移除2级事件" id="btn2"/>
+		<script type="text/javascript">
+			window.onload = function() {
+				//回调函数
+				function m1() {
+					alert('hello,world');
+				}
+				
+				var btn1 = document.getElementById('btn1');
+				var btn2 = document.getElementById('btn2');
+				
+				alert(btn1.addEventListener);
+				alert(btn1.attachEvent);
+				
+				//注册2级事件
+				if (btn1.addEventListener) {
+					btn1.addEventListener('click',m1);
+				} else {
+					btn1.attachEvent('onclick',m1);
+				}
+				
+				//移除2级事件
+				btn2.onclick = function() {
+					
+					if (btn1.removeEventListener) {
+						btn1.removeEventListener('click',m1);
+					} else {
+						btn1.detachEvent('onclick',m1);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

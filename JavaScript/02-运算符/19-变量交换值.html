@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = prompt('a');
+			var b = prompt('b');
+			
+			//使用第三个变量作为临时变量，交换变量
+//			var temp = a;
+//			a = b;
+//			b = temp;
+			
+			//假设a和b都是数字，不使用第三个变量，交换变量值
+			a = b - a;
+			b = b - a;
+			a = a + b;
+			
+			alert('a =' + a + ',b =' + b);
+		</script>
+	</body>
+</html>

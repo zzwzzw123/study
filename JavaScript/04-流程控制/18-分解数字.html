@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var input = prompt('请输入一个四位数');
+			input = parseInt(input);
+			
+			//千位数
+			var a = parseInt(input / 1000)
+			
+			//百位数
+			var b = parseInt(input / 100 % 10);
+			
+			//十位数
+			var c = parseInt(input / 10 % 10);
+			
+			//个位数
+			var d = parseInt(input % 10);
+			
+			alert('a=' + a + 'b=' + b + 'c=' + c + 'd=' + d);
+		</script>
+	</body>
+</html>

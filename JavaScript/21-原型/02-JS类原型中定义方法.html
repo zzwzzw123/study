@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//在String原型中添加共通trimStr的方法
+			if (String.prototype.trim == undefined) {
+				
+				String.prototype.trim = function() {
+					
+					var str = this.replace(/^\s+/g,'').replace(/\s+$/g,'');
+
+					return str;
+				}
+			}
+			
+			var str = '   a   b   c   ';
+			
+			str = str.trim();
+			
+			console.log('1' + str + '2');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//短路与
+			var a = 10;
+//			var result = 5 < 3 && a ++ > 10;//a++没有机会执行
+//			alert(a);//10
+			
+			var result = 5 > 3 && a ++ > 10;
+			
+			//短路或
+			var result = 5 > 3 || a ++ > 10;//a++没有机会执行
+			
+			alert(a);//11
+		</script>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div class="dd">
+			
+			<div id="div1">
+				
+				<div id="div2" class="1">
+					div2...					
+					<p id="p1">p111111</p>
+					<p>p22222</p>
+				</div>
+				
+				<div id="div3">
+					div3...
+				</div>
+				
+				<div id="div4">
+					div4...
+					<p id="p3">p333333</p>
+				</div>
+				
+				<p>段落文字1</p>
+				<p>段落文字2</p>
+				
+			</div>			
+			
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			$(function() {
+				
+				var i;
+				
+				//返回直接子元素
+//				i = $('#div1').children().length;
+				
+				//返回指定的直接子元素
+//				i = $('#div1').children('p').length;
+
+				//返回所有子元素,包括间接子元素
+//				i = $('#div1').find('*').length;
+				
+				//返回指定子元素,包括间接子元素
+				//i = $('#div1').find('p').length;
+				
+				//直接父节点
+//				console.log( $('#p1').parent() );
+
+				//返回指定的直接父节点
+//				console.log( $('#p1').parent('#div2') );
+
+				//返回所有的父节点
+//				console.log( $('#p1').parents() );
+				
+				//返回指定的父节点
+//				console.log( $('#p1').parents('.dd') );
+
+				//返回指定父元素之前的所有父节点
+//				console.log( $('#p1').parentsUntil('.dd') );
+				
+				//返回下一个平级节点
+//				console.log( $('#div2').next() );
+				
+				//返回后面的所有平级节点
+//				console.log( $('#div2').nextAll() );
+
+				//返回后面的所有指定的平级节点
+//				console.log( $('#div2').nextAll('div') );
+				
+				//返回上一个平级节点
+//				console.log( $('#div4').prev() );
+				
+//				console.log( $('#div4').prevAll() );
+
+				//返回所有平级节点
+//				console.log( $('#div3').siblings() );
+//				console.log( $('#div3').siblings('div') );
+								
+			});			
+		</script>		
+		
+	</body>
+</html>

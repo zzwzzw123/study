@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1" zzw="1001">
+			段落内容1
+		</p>
+		
+		<input type="button" value="读取自定义属性" onclick="m1();"/>
+		<script type="text/javascript">
+			function m1() {
+				var p1 = document.getElementById('p1');
+				
+				alert(p1.getAttribute('zzw'));//取值
+				
+				p1.setAttribute('zzw',1002) ;//赋值
+				
+				p1.setAttribute('align','center');
+				
+				p1.align = 'center';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		
+		<input type="button" value="添加10个段落" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				
+				var div1 = document.getElementById('div1');
+				//文档碎片
+				var wrap = document.createDocumentFragment();
+				
+				for (var i = 1;i <= 10;i ++) {
+					var p = document.createElement('p');
+					p.innerHTML = 'hello,world' + i;
+					//把p添加到文档碎片中
+					div1.appendChild(p);
+				}
+				
+				//一次性添加10个元素
+				div1.appendChild(wrap);
+			}
+		</script>
+	</body>
+</html>

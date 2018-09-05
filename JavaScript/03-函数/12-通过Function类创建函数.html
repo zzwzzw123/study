@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function m1(a,b) {
+				alert(a + b);
+			}
+			
+			var m2 = function(a,b) {
+				alert(a + b);
+			}
+			
+			//函数声明和函数表达式最终内部执行的就是new Function语句
+			var m3 = new Function('a','b','alert(a+b);');
+			
+			m3(5,3);
+		</script>
+	</body>
+</html>

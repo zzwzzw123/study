@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			for (var i = 1;i <= 100;i ++) {
+				document.write('<p>' + i + '</p>');
+			}
+			
+			document.onclick = function () {
+				
+				//视口宽度
+				var w = document.documentElement.clientWidth;
+				//视口高度
+				var h = document.documentElement.clientHeight;
+				
+				alert(w + ',' + h);
+			}
+			
+			//onresize窗口大小被改变事件
+			window.onresize = function() {
+				
+				//视口宽度
+				var w = document.documentElement.clientWidth;
+				//视口高度
+				var h = document.documentElement.clientHeight;
+				
+				document.title = w + ',' + h;
+			}
+		</script>		
+	</body>
+</html>

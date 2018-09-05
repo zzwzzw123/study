@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea id="t1" cols="50" rows="10"></textarea>
+		<input type="button" value="执行" onclick="m1();"/>
+		<script type="text/javascript">
+			function m1() {
+				
+				var t1 = document.getElementById('t1');
+				
+				eval(t1.value);
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="text" value="你好世界" id="t1"/>
+			<input type="button" value="测试" onclick="m1();"/>
+		</form>
+		
+		<script type="text/javascript">
+			function m1() {
+				var t1 = document.getElementById('t1');
+				
+				t1.value = 'hello,world';
+				t1.defaultValue = '你好中国';
+			}
+		</script>
+	</body>
+</html>

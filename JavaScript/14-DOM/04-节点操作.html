@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p id="p1">段落内容1</p>
+			<p id="p2">段落内容2</p>
+			<p id="p3">段落内容3</p>
+		</div>
+		
+		<input type="button" value="查看父节点" onclick="m1();"/>
+		<input type="button" value="查看子节点" onclick="m2();"/>
+		
+		<script type="text/javascript">
+			
+			function m1() {
+				
+				var div1 = document.getElementById('div1');
+				var p1 = document.getElementById('p1');
+				var p2 = document.getElementById('p2');
+				var p3 = document.getElementById('p3');
+				
+				//返回p1的父节点
+				var parentObj = p1.parentNode;
+				alert(parentObj.outerHTML);
+				
+				parentObj = div1.parentNode;
+				alert(parentObj.outerHTML);
+				
+			}
+			
+			function m2() {
+				
+				var div1 = document.getElementById('div1');
+				var p1 = document.getElementById('p1');
+				var p2 = document.getElementById('p2');
+				var p3 = document.getElementById('p3');
+				
+				//返回div1的直接子节点
+				var childs = div1.childNodes;
+				
+				alert('节点的个数： ' + childs.length);
+				
+			}
+		</script>
+	</body>
+</html>

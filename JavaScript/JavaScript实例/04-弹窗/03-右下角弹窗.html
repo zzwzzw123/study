@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				overflow-x: hidden;
+			}
+			
+			#div1 {
+				width: 300px;
+				height: 200px;
+				background: #0cc;
+				position: fixed;
+				bottom: 0;
+				right: -300px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		打开网页，右下角缓缓进入弹窗（从右往左进入）
+		<div id="div1">
+			右下角弹窗
+		</div>
+		
+		<script>
+			window.onload = function() {
+				
+				var div1 = document.getElementById('div1');
+				
+				var right = -300;
+				
+				var timerId = window.setInterval(function() {
+					
+					right += 5;
+					
+					div1.style.right = right + 'px';
+					
+					if (right >= 0) {
+						window.clearInterval(timerId);	
+					}
+					
+				},50);
+				
+			}
+		</script>
+	</body>
+</html>

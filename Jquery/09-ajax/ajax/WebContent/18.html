@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="ajax请求" id="btn1"/>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					var msg;//响应的数据
+					
+					/**
+					 * ajax的新版语法
+					 */
+					$.ajax({
+						async:false,//设置同步请求
+						timeout:4000,//请求超时设置
+						url:'RequestServlet',//请求url
+						type:'GET',//请求方式 GET POST
+						dataType:'text',//响应的类型
+						data:{username:'tom',userpwd:'123456'}//请求参数
+					})
+					.done(function(data,status,xhr) {//链式写法
+						
+						msg = data;
+					})
+					.fail(function(xhr,errorStatus,errorText) {
+						
+						//失败回调
+						if (errorStatus == 'timeout') {//链式写法
+							alert('请求超时，请重新尝试')
+						} else {
+							alert('请求失败：' + errorStatus + ',' + errorText);
+						}
+						
+					});
+					
+					alert(msg);
+				})
+
+			});
+		</script>
+	</body>
+</html>

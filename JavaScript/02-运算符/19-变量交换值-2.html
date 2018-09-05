@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var a = 3;
+			var b = 5;
+			
+			//使用第三个变量作为临时变量，交换变量
+			/*
+			var temp = a;
+			a = b;
+			b = temp;		
+			*/
+			
+			//假设a和b都是数字，不使用第三个变量，交换变量值
+			a = b - a;//a=2 b=5			
+			b = b - a;//a=2	b=3			
+			a = a + b;//a=5 b=3			
+			
+			alert('a=' + a + ",b=" + b);				
+		</script>
+	</body>
+</html>

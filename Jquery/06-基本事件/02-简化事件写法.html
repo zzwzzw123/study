@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="click" id="btn1" />
+		<input type="button" value="hover" id="btn2" />
+				
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function() {
+				
+				/**
+				 * jquery提供大量的方法简化事件注册
+				 */
+				
+				$('#btn1').click(function(e) {
+					
+					alert('按钮被单击');	
+					
+				});
+				
+				
+				//hover把鼠标移上离开事件合并
+				$('#btn2').hover(function(){
+					//鼠标移上
+					$(this).css('color','red');					
+				},function(){
+					//鼠标离开
+					$(this).css('color','#000000');					
+				});
+							
+				
+				//窗口改变大小事件
+				$(window).resize(function() {
+					
+					document.title = $(window).width() + ',' + $(window).height();
+										
+				});								
+				
+			});			
+		</script>
+	</body>
+</html>

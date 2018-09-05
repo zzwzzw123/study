@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="click" id="btn1" />
+		<input type="button" value="one" id="btn2" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			
+			//on语句注册普通事件
+			$('#btn1').on('click',function() {
+				
+				alert('hello,world');
+				
+			});
+			
+			//one语句注册一次性事件
+			$('#btn2').one('click',function() {
+				
+				alert('hello,world');
+			});			
+			
+		</script>
+	</body>
+</html>

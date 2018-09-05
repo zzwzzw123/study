@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>   
+		<script type="text/javascript">
+			/*
+			 * 水仙花数一定是三位数
+			 * 水仙花数=各个位数的立方和
+			 * 例如153
+			 */
+
+			for(var i = 100;i <= 999;i ++) {	
+				var a = parseInt(i / 100)
+				var b = parseInt(i / 10 % 10);
+				var c = parseInt(i % 10);
+				var lifang = a * a * a + b * b * b + c * c * c;
+				if (i == lifang) {
+				document.write(lifang + '<br>');
+				}
+			}
+			
+		</script>
+	</body>
+</html>

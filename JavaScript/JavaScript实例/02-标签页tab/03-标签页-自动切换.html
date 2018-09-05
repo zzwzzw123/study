@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!--标签页容器开始-->		
+		<div id="notice">
+			<!--标题区开始-->
+			<div id="notice-title">
+				<ul>
+					<li class="select"><a href="javascript:void(0);">公共</a></li>
+					<li><a href="javascript:void(0);">规则</a></li>
+					<li><a href="javascript:void(0);">论坛</a></li>
+					<li><a href="javascript:void(0);">安全</a></li>
+					<li><a href="javascript:void(0);">公益</a></li>
+				</ul>
+			</div>			
+			<!--标题区结束-->	
+			<!--内容区开始-->
+			<div id="notice-content">
+				<div class="content" style="display:block;">
+					<ul>
+						<li><a href="">公共1</a></li>
+						<li><a href="">公共1</a></li>
+						<li><a href="">公共1</a></li>
+						<li><a href="">公共1</a></li>
+					</ul>
+				</div>
+				<div class="content" style="display: none;">
+					<ul>
+						<li><a href="">规则2</a></li>
+						<li><a href="">规则2</a></li>
+						<li><a href="">规则2</a></li>
+						<li><a href="">规则2</a></li>
+					</ul>
+				</div>
+				<div class="content" style="display: none;">
+					<ul>
+						<li><a href="">论坛3</a></li>
+						<li><a href="">论坛3</a></li>
+						<li><a href="">论坛3</a></li>
+						<li><a href="">论坛3</a></li>
+					</ul>
+				</div>
+				<div class="content" style="display: none;">
+					<ul>
+						<li><a href="">安全4</a></li>
+						<li><a href="">安全4</a></li>
+						<li><a href="">安全4</a></li>
+						<li><a href="">安全4</a></li>
+					</ul>
+				</div>
+				<div class="content" style="display: none;">
+					<ul>
+						<li><a href="">公益5</a></li>
+						<li><a href="">公益5</a></li>
+						<li><a href="">公益5</a></li>
+						<li><a href="">公益5</a></li>
+					</ul>
+				</div>
+			</div>			
+			<!--内容区结束-->
+		</div>
+		<!--标签页容器结束-->
+		
+		<script>
+		
+			/**
+			 * 通过id返回对象的工具函数
+			 */
+			function $(id) {
+				
+				return document.getElementById(id);
+			}
+					
+		
+			window.onload = function() {
+								
+				//当前下标索引
+				var index = 0;
+				
+				//获得容器对象
+				var notice = $('notice');				
+				//获得所有的标题对象
+				var titles = $('notice-title').getElementsByTagName('li');
+				//获得所有的内容对象
+				var contents = $('notice-content').getElementsByTagName('div');
+				
+				//标题和内容的个数必须相等
+				if (titles.length != contents.length)
+					return;
+					
+					
+				//遍历循环
+				for (var i = 0;i < titles.length;i ++) {
+					
+					//设置自定义属性
+					titles[i].setAttribute('tid',i);
+					
+					//标题鼠标移上事件
+					titles[i].onmouseenter = function() {
+						
+						//读取返回当前标题的自定义属性
+						var tid = this.getAttribute('tid');
+						
+						//设置index为当前tid
+						index = tid;
+												
+						changeTab(tid);																		
+					}
+					
+				}
+				
+				
+				//鼠标移上标签页区域，定时器终止
+				notice.onmouseenter = function() {
+					clearInterval(timerId);
+				}
+				
+				//鼠标离开标签页区域，定时器重新启动
+				notice.onmouseleave = function() {
+					startTimer();				
+				}				
+				
+				/**
+				 * 切换tab
+				 */
+				function changeTab(tid) {
+					
+					//所有的内容隐藏，所有标题失去高亮
+					for (var i = 0;i < titles.length;i ++) {
+						contents[i].style.display = 'none';
+						titles[i].className = '';
+					}						
+										
+					//当前标题高亮
+					titles[tid].className = 'select';
+					
+					//显示对应的内容
+					contents[tid].style.display = 'block';					
+				}
+				
+				
+				var timerId;
+				
+				/**
+				 * 执行定时器函数
+				 */
+				function startTimer() {
+					
+					//启动定时器
+					timerId = setInterval(function(){
+						
+						index ++;
+						
+						if (index == titles.length)
+							index = 0;
+						
+						changeTab(index);
+						
+					},2000);
+					
+				}
+				
+				
+				//网页加载完毕自动执行定时器
+				startTimer();
+				
+			}			
+		</script>
+	</body>
+</html>

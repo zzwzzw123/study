@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img id="p1" src="../images/1.jpg"/>
+		
+		<script type="text/javascript">
+			window.onload = function () {
+				
+				var p1 = document.getElementById('p1');
+				p1.onmouseover = function() {
+					p1.src ="../images/5.jpg"; 
+				}
+				p1.onmouseout = function() {
+					p1.src ="../images/1.jpg"; 
+				}
+			}
+		</script>
+	</body>
+</html>

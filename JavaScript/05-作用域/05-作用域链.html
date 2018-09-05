@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var a = 10;
+			var b = 20;
+			
+			function m1() {
+				
+				var a = 30;
+				
+				alert('a=' + a);
+				alert('b=' + b);
+				
+				function m2() {
+					
+					var c = 40;
+					
+					alert('m2_a=' + a);
+					alert('m2_b=' + b);
+					alert('m2_c=' + c);
+					
+				}
+				
+				m2();
+			}
+			
+			m1();
+		</script>
+	</body>
+</html>

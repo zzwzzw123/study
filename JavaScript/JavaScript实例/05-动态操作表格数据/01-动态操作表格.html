@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table width="500" border="1" id="tab">
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>操作</th>
+			</tr>
+		</table>
+		
+		<form action="">
+			<table>
+				<tr>
+					<td>编号</td>
+					<td>
+						<input type="text" id="sid" />
+					</td>
+				</tr>
+				<tr>
+					<td>姓名</td>
+					<td>
+						<input type="text" id="sname" />
+					</td>
+				</tr>
+				<tr>
+					<td>年龄</td>
+					<td>
+						<input type="text" id="sage" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value="增加学生" id="addBtn" />
+					</td>
+				</tr>
+			</table>			
+		</form>
+		<script type="text/javascript">
+			
+			var addBtn = document.getElementById('addBtn');
+			var sid = document.getElementById('sid');
+			var sname = document.getElementById('sname');
+			var sage = document.getElementById('sage');
+			var tab = document.getElementById('tab');
+			
+			
+			addBtn.onclick = function() {
+				
+				var tr = document.createElement('tr');
+				var td = document.createElement('td');
+				
+				tab.appendChild(tr);
+		
+				for (var i = 0;i < 4;i ++) {
+
+					var td = tr.insertCell();
+
+					if (i == 0) {
+						td.innerHTML = sid.value;
+					} else if (i == 1) {
+						td.innerHTML = sname.value;
+					} else if (i == 2) {
+						td.innerHTML = sage.value;
+					} else {
+						var input = document.createElement('input');
+						input.value = '删除';
+						input.type = 'button';
+						td.style.textAlign = 'center';
+						td.appendChild(input);
+					}
+					
+					var tds = document.querySelectorAll('#tab td');
+					
+					for (var j = 0;j < tds.length;j ++) {
+						var a = tds[tds.length - 1];
+						a.onclick = function() {
+							tab.removeChild(tr);
+						}
+					}
+				}
+				
+				sid.value = '';
+				sname.value = '';
+				sage.value = '';
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

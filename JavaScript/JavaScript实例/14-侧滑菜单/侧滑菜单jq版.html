@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding:0;
+			}
+			
+			ul,li {
+				list-style-type: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			#menu-left {
+				width: 200px;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: -200px;
+				background: rgba(0,0,0,0.8);
+				color: #CCCCCC;
+				font-size: 12px;
+			}
+			
+			#menu-left h4 {
+				line-height: 40px;
+				border-bottom: 1px solid #666;
+				font-size: 16px;
+			}
+			
+			#menu-left ul {
+				height: calc(100% - 40px);
+				overflow: auto;
+			}
+			
+			#menu-left ul li {
+				line-height: 40px;
+			}
+			
+			#menu-left ul li a {
+				color: #FFFFFF;
+				padding-left: 20px;
+				display: block;
+			}
+			
+			#menu-left ul li a:hover {
+				background: rgba(255,255,255,0.1);
+			}
+			
+			#btn {
+				width: 20px;
+				height: 60px;
+				position: absolute;
+				background: #000000;
+				color: #FFFFFF;
+				top: calc(50% - 60px);
+				right: -20px;
+				text-align: center;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<!--侧滑菜单容器开始-->
+		<div id="menu-left">
+			<h4>侧滑菜单</h4>
+			<ul>
+				<li><a href="javascript:void(0);">导航链接1</a></li>
+				<li><a href="javascript:void(0);">导航链接2</a></li>
+				<li><a href="javascript:void(0);">导航链接3</a></li>
+				<li><a href="javascript:void(0);">导航链接4</a></li>
+				<li><a href="javascript:void(0);">导航链接5</a></li>
+				<li><a href="javascript:void(0);">导航链接6</a></li>
+				<li><a href="javascript:void(0);">导航链接7</a></li>
+				<li><a href="javascript:void(0);">导航链接8</a></li>
+				<li><a href="javascript:void(0);">导航链接9</a></li>
+				<li><a href="javascript:void(0);">导航链接10</a></li>
+				<li><a href="javascript:void(0);">导航链接11</a></li>
+				<li><a href="javascript:void(0);">导航链接12</a></li>
+				<li><a href="javascript:void(0);">导航链接13</a></li>
+				<li><a href="javascript:void(0);">导航链接14</a></li>
+				<li><a href="javascript:void(0);">导航链接15</a></li>
+			</ul>
+			<div id="btn">左侧菜单</div>
+		</div>
+		<!--侧滑菜单容器结束-->
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#menu-left').hover(
+					
+					function() {
+						
+						$('#menu-left').stop();
+						
+						$('#menu-left').animate({
+							left:0
+						},1000);
+						
+					},
+					
+					function() {
+						
+						$('#menu-left').stop();
+						
+						$('#menu-left').animate({
+							left:-200
+						},1000);
+					
+					}
+				);
+				
+			});
+		</script>
+	</body>
+</html>

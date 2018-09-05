@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr1 = [100,101,102];
+			var arr2 = [200,201];
+			
+			//合并数组
+			var arr3 = arr1.concat(arr2);
+			
+			console.dir(arr3);
+			
+			//拼接数组元素的字符串
+			console.log( arr3.join() );//默认都好分隔
+			console.log( arr3.join('#') );//自定义分隔符
+			console.log( arr3.join('') );//空字符串
+		</script>
+	</body>
+</html>

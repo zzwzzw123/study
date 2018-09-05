@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="#" id="a1">这是链接</a>
+		<input type="button" value="设置属性" onclick="m1();"/>
+		<input type="button" value="返回属性" onclick="m2();"/>
+		<script type="text/javascript">
+			function m1() {
+				var a1 = document.getElementById('a1');
+				a1.href = 'http://192.168.34.254';
+				a1.target = '_blank';
+				a1.title = '鼠标移上提示';
+				a1.innerHTML = 'xx企业网';
+			}
+			
+			function m2 () {
+				var a1 = document.getElementById('a1');
+				alert(a1.href);
+				alert(a1.target);
+				alert(a1.title);
+				alert(a1.innerHTML)
+			}
+		</script>
+	</body>
+</html>

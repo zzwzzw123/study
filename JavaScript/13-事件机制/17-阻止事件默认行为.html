@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="http://192.168.30.254" id="a1">xx企业网</a>
+		
+		<script type="text/javascript">
+		
+			//禁止网页右键菜单
+			document.oncontextmenu = function(e) {
+				e = window.event || e;
+				
+				//阻止默认行为的兼容写法
+				//e.proventDefault?e.preventDefault():e.returnValue=false;
+				
+				alert('禁止右键菜单！！！！');
+				
+				//在事件回调函数中return false;也能够阻止事件 默认行为
+				return false;
+			}
+		
+			window.onload = function() {
+				var a1 = document.getElementById('a1');
+				
+				a1.onclick = function(e) {
+					
+					e = window.event ||　e;
+					
+					//阻止默认行为的兼容写法
+					e.proventDefault?e.preventDefault():e.returnValue=false;
+				}
+			}
+		</script>
+	</body>
+</html>

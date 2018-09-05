@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="get请求1" id="btn1"/>
+		
+		<div id="div1">
+			
+		</div>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					//请求xml数据
+					$.get('emp.xml',function(data) {
+						
+						//返回xml文档中的索引ROW元素
+						var rows = $(data).find('ROW');
+						
+						//遍历ROW元素
+						rows.each(function(index,el) {
+							
+							var empId = $(el).find('EMPLOYEE_ID');
+							var name = $(el).find('LAST_NAME');
+							var sal = $(el).find('SALARY');
+							
+							alert(empId.text() + ',' + name.text() + ',' + sal.text());
+						});
+						
+					})
+				});
+
+			});
+		</script>
+	</body>
+</html>

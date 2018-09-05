@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function m1() {
+				console.log('m1_1');
+				console.log('m2_' + m2());
+				console.log('m1_2');
+			}
+			
+			function m2() {
+				console.log('m2_1');
+				return 2;
+			}
+			
+			m1();
+			//m1_1
+			//m2_1
+			//m2_2
+			//m1_2
+		</script>
+	</body>
+</html>

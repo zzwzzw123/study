@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*后代选择器*/
+			#div1 p span{
+				color: red;
+			}
+			
+			p span{
+				color: green;
+			}
+			
+			#div2 p span{
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			这是div1的内容
+			<p>
+				这是段落1
+				<span>
+					这是span内容1
+				</span>
+			</p>
+		</div>
+		<div id="div2">
+			这是div2的内容
+			<p>
+				这是段落2
+				<span>
+					这是span内容2
+				</span>
+			</p>
+		</div>
+		<div id="div3">
+			<p>
+				这是段落3
+				<span>
+					这是span内容3
+				</span>
+			</p>
+		</div>
+	</body>
+</html>

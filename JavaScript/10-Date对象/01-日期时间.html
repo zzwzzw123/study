@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+			function showDate() {
+				var d = new Date();
+
+				var y = d.getFullYear(); //年
+				var m = d.getMonth() + 1; //月
+				var dd = d.getDate(); //日
+				var w = d.getDay(); //星期
+				var h = d.getHours(); //小时
+				var mi = d.getMinutes(); //分钟
+				var s = d.getSeconds(); //秒
+
+				var weeks = ['日', '一', '二', '三', '四', '五', '六'];
+
+				var dateStr = y + '年' + m + '月' + dd + '日' + ' 星期' + weeks[w] + ' ' + h + ':' + mi + ':' + s;
+				var div1 = document.getElementById('div1');
+				div1.innerHTML = dateStr;
+			}
+			
+			setInterval(showDate,1000);
+		</script>
+	</body>
+
+</html>

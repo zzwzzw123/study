@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.p1 {
+				width: 200px;
+				height: 200px;
+				background: #0cc;
+				border: 1px solid #000;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="box">你好，世界</p>
+		<input type="button" value="设置class" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				var p1 = document.getElementById('box');
+				
+				p1.className = 'p1';
+				
+			}
+		</script>
+	</body>
+</html>

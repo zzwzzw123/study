@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var citys = [
+				['沈阳','大连','鞍山','抚顺','本溪'],
+				['长春','通化','四平','通辽'],
+				['哈尔滨','齐齐哈尔','牡丹江','大庆','鸡西']
+			]
+			
+			//遍历
+			for (var i = 0;i < citys.length;i ++) {
+				document.write('<ul>');
+				for (var j = 0;j <citys[i].length;j ++) {
+					document.write('<li>' + citys[i][j] + '</li>')
+				}
+				
+				document.write('</ul>');
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1 {
+				width: 200px;
+				height: 200px;
+				background: #00CCCC;
+				position: relative;
+			}
+			
+			#div2 {
+				width: 100px;
+				height: 100px;
+				background: orange;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -50px;
+				margin-top: -50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2">
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				var div1 = document.getElementById('div1');
+				
+				//鼠标穿过子元素的时候会重复触发事件
+				/*div1.onmouseover = function () {
+					console.log('div1 mouseover...');
+				}
+				
+				div1.onmouseout = function () {
+					console.log('div1 mouseout...');
+				}*/
+				
+				//鼠标穿过子元素的时候不会重复触发事件
+				div1.onmouseenter = function () {
+					console.log('div1 mouseenter...');
+				}
+				
+				div1.onmouseleave = function () {
+					console.log('div1 mouseleave...');
+				}
+			}
+		</script>
+	</body>
+</html>

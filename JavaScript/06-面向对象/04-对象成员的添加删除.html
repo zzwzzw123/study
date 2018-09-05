@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Person(name,age) {
+				
+				//属性
+				this.name = name;
+				this.age = age;
+				
+				//方法
+				this.getinfo = function() {
+					alert(this.name + ',' + this.age);
+				}
+			}
+			
+			var p1 = new Person('jack',27);
+			var p2 = new Person('tom',25);
+			//添加属性
+			p1.phone = '10086';
+			//添加方法
+			p1.eat= function() {
+				alert('吃东西');
+			}
+			
+//			alert(p1.name);
+//			alert(p1.phone);
+//			p1.getinfo();
+//			p1.eat();
+			
+			//删除属性
+			delete p1.age;
+			//删除方法
+			delete p2.getinfo;
+			
+			console.log(p1);
+			console.log(p2);
+		</script>
+	</body>
+</html>

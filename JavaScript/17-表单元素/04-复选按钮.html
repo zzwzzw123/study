@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="">
+			<input type="checkbox" value="java" name="skill" checked/>java
+			<input type="checkbox" name="skill" id="skill" value="oracle" />oracle
+			<input type="checkbox"  name="skill" value="linux" checked/>linux
+			<input type="checkbox" name="skill" id="skill" value="ssm" />ssm
+			<input type="button" value="测试" onclick="m1();"/>
+			<input type="checkbox" id="selectBtn" onclick="m2();"/>全选/全部取消
+		</form>
+		
+		<script type="text/javascript">
+			function m1() {
+				
+				var skill = document.getElementsByName('skill');
+				
+				var str = '';
+				
+				for (var i = 0;i < skill.length;i ++) {
+					if (skill[i].checked) {
+						
+						str += skill[i].value + ' ';
+					}
+				}
+				
+				alert('选中的技能有：' + str);
+			}
+			
+			function m2() {
+				
+				var skill = document.getElementsByName('skill');
+				var selectBtn = document.getElementById('selectBtn');
+				
+				for (var j = 0;j < skill.length;j ++) {
+					
+					skill[j].checked = selectBtn.checked;
+					
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				name:'jack',
+				age:27,
+				phone:'10086',
+				eat: function(){
+					alert('吃东西');
+				}
+			};
+			
+			var fieldName = 'age';
+			
+			console.log(obj[fieldName]);
+			
+			obj['eat']();
+		</script>
+	</body>
+</html>

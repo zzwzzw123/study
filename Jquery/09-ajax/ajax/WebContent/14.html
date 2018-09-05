@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="请求1" id="btn1"/>
+		<input type="button" value="请求2" id="btn2"/>
+		
+		<div id="loading" style="display: none;">
+			正在执行中
+			<img src="img/loading-1.gif"/>
+		</div>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				/**
+				 * ajax全局回调函数，当前网页任何一个ajax请求都会触发这些事件
+				 */
+				
+				//触发事件，任何ajax请求开始（只有第一个ajax请求开始会触发）
+				$(document).ajaxStart(function() {
+					console.log('ajaxStart');
+					$('#loading').show();
+				});
+				
+				//触发事件，所有ajax都结束（无论成功失败）
+				$(document).ajaxStop(function() {
+					console.log('ajaxStop');
+					$('#loading').hide();
+				});
+				
+				//触发事件，每一个请求开始时
+				$(document).ajaxSend(function() {
+					console.log('ajaxSend');
+				});
+				
+				//触发事件，每一个请求成功时
+				$(document).ajaxSuccess(function() {
+					console.log('ajaxSuccess');
+				});
+				
+				//触发事件，每一个请求完成时
+				$(document).ajaxComplete(function() {
+					console.log('ajaxComplete');
+				});
+				
+				//触发事件，任何请求发生错误时
+				$(document).ajaxError(function() {
+					console.log('ajaxErroe');
+				});
+				
+				$('#btn1').click(function() {
+					
+					$.get('RequestServlet',function() {
+						
+						alert('请求1结束');
+						
+					});
+					
+				});
+				
+				$('#btn2').click(function() {
+					
+					$.get('RequestServlet2',function() {
+						
+						alert('请求2结束');
+						
+					});
+					
+				});
+				
+			});
+		</script>
+	</body>
+</html>

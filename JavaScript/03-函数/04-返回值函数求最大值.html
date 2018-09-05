@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//传入任意两个数字，返回最大值
+			function getmax(x,y) {
+				var max = x > y ? x : y;
+				return max;
+			}
+			
+			var a = 10;
+			var b = 17;
+			var c = 15;
+			
+			var max =　getmax(a,b);
+			max = getmax(max,c);
+			
+			alert('最大值是：' + max);
+		</script>
+	</body>
+</html>

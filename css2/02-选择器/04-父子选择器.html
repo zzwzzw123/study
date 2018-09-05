@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*父子选择器*/
+			#div1>p>span{
+				color: red;
+			}
+			
+			p>span{
+				color: green;
+			}
+			#p4 .s4{
+				color: #0cc;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			这是div1的内容
+			<p>
+				这是段落1
+				<span>
+					这是span内容1
+				</span>
+			</p>
+		</div>
+		<div id="div2">
+			这是div2的内容
+			<p>
+				这是段落2
+				<span>
+					这是span内容2
+				</span>
+			</p>
+		</div>
+			<p>
+				这是段落3
+				<span>
+					这是span内容3
+				</span>
+			</p>
+			<p id="p4">
+				这是段落4
+				<span class="s4">
+					这是span内容4
+				</span>
+			</p>
+	</body>
+</html>

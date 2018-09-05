@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.write('<table border="0" width="100%">')
+			for (var i = 0;i <= 9;i ++) {
+				document.write('<tr>')
+				
+				for (var j = 1;j <=i;j ++) {
+					document.write('<td bgcolor="orange">' + j + '*' + i + '=' + i*j +'</td>')
+				}
+				document.write('<tr/>')
+			}
+			document.write('</table>')
+		</script>
+		
+		<br /><br />
+		
+		<script type="text/javascript">
+			document.write('<table border="0" width="100%">')
+			for (var i = 9;i >= 0;i --) {
+				document.write('<tr>')
+				
+				for (var j = 1;j <=i;j ++) {
+					document.write('<td bgcolor="orange">' + j + '*' + i + '=' + i*j +'</td>')
+				}
+				document.write('<tr/>')
+			}
+			document.write('</table>')
+		</script>
+		
+		<br /><br />
+		
+		<script type="text/javascript">
+			document.write('<table border="0" width="100%">')
+			for (var i = 1;i <= 9;i ++) {
+				document.write('<tr>')
+				
+				//输出对应数量的空td
+				for(var k = 1;k <= 9 - i;k ++){
+					document.write('<td>&nbsp</td>')
+				}
+				
+				
+				for (var j = 1;j <= i;j ++) {
+					document.write('<td bgcolor="orange">' + j + '*' + i + '=' + i*j +'</td>')
+				}
+				document.write('<tr/>')
+			}
+			document.write('</table>')
+		</script>
+		
+		<br /><br />
+		
+		<script type="text/javascript">
+			document.write('<table border="0" width="100%">')
+			for (var i = 9;i >= 1;i --) {
+				document.write('<tr>')
+				
+				//输出对应数量的空td
+				for(var k = 1;k <= 9 - i;k ++){
+					document.write('<td>&nbsp</td>')
+				}
+				
+				
+				for (var j = 1;j <= i;j ++) {
+					document.write('<td bgcolor="orange">' + j + '*' + i + '=' + i*j +'</td>')
+				}
+				document.write('<tr/>')
+			}
+			document.write('</table>')
+		</script>
+	</body>
+</html>

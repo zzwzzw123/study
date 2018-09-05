@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--用户输入总记录数，每页多少条，当前是第几页-->
+		<!--输出 共XX条数据，每页XX条，共XX页，当前是第XX页，从第XX条到第XX条-->
+		<script type="text/javascript">
+			var recordCount = prompt('请输入总记录数');
+			var pageSize = prompt('每页多少条');
+			//共几页
+			var pageCount = Math.ceil(recordCount / pageSize) ;
+			var pageNum = prompt('请输入当前页码');
+			
+			var firstRecord = parseInt(pageSize * (pageNum - 1) + 1); 
+			var lastRecord;
+			
+			if (pageNum < 1) {
+				pageNum = 1;
+			}
+			
+			if (pageNum > pageCount) {
+				pageNum = pageCount;
+			}
+			
+			if (recordCount % pageSize == 0) {
+				lastRecord = parseInt(firstRecord) + parseInt(pageSize) - 1;
+			} else {
+				lastRecord = parseInt(recordCount);		
+			}
+			
+			document.write('共' + parseInt(recordCount) + '条数据，每页' + 
+							parseInt(pageSize) + '条，共' + parseInt(pageCount) + 
+							'页，当前是' + parseInt(pageNum) + '页，从第' + 
+							parseInt(firstRecord) + '条到第' + 
+							parseInt(lastRecord) + '条');
+		</script>
+	</body>
+</html>

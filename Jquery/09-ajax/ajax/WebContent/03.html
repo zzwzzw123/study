@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		账号
+		<input type="text" id="username"/>
+		密码
+		<input type="text" id="userpwd"/>
+		
+		<input type="button" value="post请求1" id="btn1"/>
+		
+		<div id="div1">
+			
+		</div>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					var param = {
+						username:$('#username').val(),
+						userpwd:$('#userpwd').val()
+					}
+					
+					//post请求
+					$.post('RequestServlet',param,function(data,status,xhr) {
+						
+						//响应的内容设置到div容器中
+						$('#div1').html(data);
+						
+					});
+				});
+				
+			});
+		</script>
+	</body>
+</html>

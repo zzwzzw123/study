@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="">
+			<select id="city">
+				<option value="beijing">北京</option>
+				<option value="shanghai">上海</option>
+				<option value="guangzhou">广州</option>
+				<option value="shenzhen">深圳</option>
+			</select>
+			<input type="button" value="测试" onclick="m1();"/>
+			<input type="button" value="增加" onclick="add();"/>
+			<input type="button" value="修改" onclick="update();"/>
+			<input type="button" value="删除" onclick="del();"/>
+			<input type="button" value="删除全部" onclick="delAll();"/>
+		</form>
+		
+		<script type="text/javascript">
+			function m1() {
+				
+				var city = document.getElementById('city');
+				
+				//city.value = 'guangzhou';//默认选中
+				
+				//alert(city.length);//option个数
+				
+				//alert(city.options[2].value);//options是所有option的集合数组
+				
+				alert(city.selectedIndex);//险种option的下标
+			}
+			
+			function add() {
+				
+				var city = document.getElementById('city');
+				
+				//创建option对象
+				var opt = new Option('大连','dalian');
+				
+				//方式1
+				//city.add(opt);
+				
+				//方式2
+				city.options[city.length] = opt;
+				
+			}
+			
+			function update() {
+				
+				var city = document.getElementById('city');
+				
+				//创建option对象
+				var opt = new Option('南京','nanjing');
+				
+				city.options[2] = opt;
+				
+			}
+			
+			function del() {
+				
+				var city = document.getElementById('city');
+				
+				//方式1
+				//city.remove(0);
+				
+				//方式2
+				city.options[0] = null;
+				
+			}
+			
+			function delAll() {
+				
+				var city = document.getElementById('city');
+				
+				city.options.length = 0;
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="json请求1" id="btn1"/>
+		<input type="button" value="json请求2" id="btn2"/>
+		<input type="button" value="json请求3" id="btn3"/>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					//请求json1.txt
+					$.get('json1.txt',function(data) {
+						
+						//转换为json对象
+						var json = JSON.parse(data);
+						
+						alert(json.empno + ',' + json.ename+ ','
+							+ json.salary + ',' + json.hiredate);
+					});
+					
+				});
+				
+				$('#btn2').click(function() {
+					
+					//请求json1.txt,设置响应的类型是json
+					$.get('json1.txt',function(json) {
+						
+						alert(json.empno + ',' + json.ename+ ','
+							+ json.salary + ',' + json.hiredate);
+							
+					},'json');
+					
+				});
+				
+				$('#btn3').click(function() {
+					
+					//请求json1.txt,直接使用getJSON方法
+					$.getJSON('json1.txt',function(json) {
+						
+						alert(json.empno + ',' + json.ename+ ','
+							+ json.salary + ',' + json.hiredate);
+						
+					});
+					
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+			}
+			
+			#div1 {
+				background: orange;
+			}
+			
+			#div2 {
+				background: #00CCCC;
+				top:150px;
+			}
+						
+		</style>
+	</head>
+	<body>
+		<input type="button" value="队列动画1" id="btn1" />
+		<input type="button" value="队列动画2" id="btn2" />
+		
+		<div id="div1">div1...</div>
+		<div id="div2">div2...</div>
+			
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function(){
+				
+				$('#btn1').click(function(){
+					
+					//不同的元素，默认动画都是同时执行，不会产生队列动画
+					$('#div1').animate({
+						left:500
+					},2000);
+					
+					$('#div2').animate({
+						left:500
+					},2000);
+										
+				});	
+				
+				$('#btn2').click(function(){
+					
+					//相同的元素，默认产生队列动画
+					$('#div1').animate({
+						left:500
+					},2000);
+					
+					$('#div1').animate({
+						top:500
+					},2000);
+										
+				});				
+				
+				
+			});			
+		</script>
+	</body>
+</html>

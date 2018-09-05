@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		
+		<input type="button" value="动态生成表格" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			
+			function m1() {
+				
+				var div1 = document.getElementById('div1');
+				
+				var table = document.createElement('table');
+				
+				table.align = 'center';
+				table.width = 500;
+				table.border = 1;
+				
+				//循环插入行
+				for (var i = 0;i < 5;i ++) {
+					
+					var tr = table.insertRow();
+					
+					//循环插入单元格
+					for (var j = 0;j < 5;j ++) {
+						
+						var td = tr.insertCell();
+						
+						td.innerHTML = i + '*' + j + '=' + i*j;
+					}
+					
+				}
+				
+				div1.appendChild(table);
+				
+			}
+		</script>
+	</body>
+</html>

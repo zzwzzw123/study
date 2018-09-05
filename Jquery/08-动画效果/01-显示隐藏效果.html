@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			
+			#div1 {
+				width: 200px;
+				height: 200px;
+				background: #00CCCC;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="显示" id="btn1" />
+		<input type="button" value="隐藏" id="btn2" />
+		
+		<input type="button" value="显示-过渡" id="btn3" />
+		<input type="button" value="隐藏-过渡" id="btn4" />
+		
+		<input type="button" value="显示-回调" id="btn5" />
+		<input type="button" value="隐藏-回调" id="btn6" />
+		
+		<input type="button" value="显示-滑动" id="btn7" />
+		<input type="button" value="隐藏-滑动" id="btn8" />
+		
+		<input type="button" value="开关-滑动" id="btn9" />
+		
+		<input type="button" value="显示-淡入" id="btn10" />
+		<input type="button" value="隐藏-淡出" id="btn11" />
+		
+		<input type="button" value="指定透明度" id="btn12" />
+		<input type="button" value="开关-淡入淡出" id="btn13" />
+				
+		<div id="div1">
+			<p>这是段落内容1</p>
+			<p>这是段落内容2</p>
+			<p>这是段落内容3</p>
+			<p>这是段落内容4</p>
+			<p>这是段落内容5</p>
+			<p>这是段落内容6</p>
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function(){
+				
+				$('#btn1').click(function() {
+					//显示
+					$('#div1').show();
+					
+				});
+				
+				$('#btn2').click(function() {
+					//隐藏
+					$('#div1').hide();
+					
+				});	
+				
+				$('#btn3').click(function() {
+					//显示-过渡
+					$('#div1').show(5000);
+					
+				});
+				
+				$('#btn4').click(function() {
+					//隐藏-过渡
+					$('#div1').hide('fast');
+					
+				});
+				
+				$('#btn5').click(function() {
+					//显示-回调
+					$('#div1').show(2000,function(){
+						alert('显示完毕');
+					});
+					
+				});
+				
+				$('#btn6').click(function() {
+					//隐藏-回调
+					$('#div1').hide(2000,function(){
+						alert('隐藏完毕');
+					});
+					
+				});
+				
+				$('#btn7').click(function() {
+					//显示-滑动
+					$('#div1').slideDown(2000);
+					
+				});
+				
+				$('#btn8').click(function() {
+					//隐藏-滑动
+					$('#div1').slideUp(2000);
+					
+				});
+				
+				$('#btn9').click(function() {
+					//开关-滑动
+					$('#div1').slideToggle(2000);
+					
+				});
+				
+				$('#btn10').click(function() {
+					//隐藏-淡入
+					$('#div1').fadeIn(2000);
+					
+				});
+				
+				$('#btn11').click(function() {
+					//开关-淡出
+					$('#div1').fadeOut(2000);
+					
+				});
+				
+				$('#btn12').click(function() {
+					//指定透明度
+					$('#div1').fadeTo(2000,0.5);
+					
+				});
+				
+				$('#btn13').click(function() {
+					//开关
+					$('#div1').fadeToggle(2000);
+					
+				});		
+				
+				
+			});		
+			
+		</script>
+						
+	</body>
+</html>

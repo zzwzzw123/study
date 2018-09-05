@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" value="10选3" onclick="m1();" />
+		<script type="text/javascript">
+			function m1() {
+
+				var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+				//从10个数字中随机选出3个不重复的数字输出，与后面的数字交换
+				for (i = 0; i < 3; i++) {
+					var temp;
+					var random = parseInt((9 - i - 0 + 1) * Math.random() + 0);
+					document.write(a[random]);
+					temp = a[random];
+					a[random] = a[9 - i];
+					a[9 - i] = temp;
+					a.pop();
+				}
+			}
+		</script>
+	</body>
+
+</html>

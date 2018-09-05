@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>		
+		<div id="div1">hello,world</div>
+		<input type="button" value="ok" id="btn1" />		
+		
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script>
+			
+			//console.log($ == jQuery);
+			
+			//文档就绪（页面载入事件）
+			$(document).ready(function(e) {
+				
+				//按钮单击事件
+				$('#btn1').click(function() {
+					
+//					alert('hello,world');
+
+					$('#div1').html('<h3>你好，世界</h3>');
+					
+				    $('#div1').css('width',200)
+				    	.css('height',200)
+				    	.css('background','#0cc')
+				    	.css('color','red');
+					
+				});				
+				
+			});
+			
+		</script>		
+	</body>
+</html>

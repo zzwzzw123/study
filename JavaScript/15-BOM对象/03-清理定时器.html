@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="清除定时器" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			var timeId = window.setInterval(function(){
+				
+				alert('hello,world');
+			},2000);
+			
+			console.log(timeId);
+			
+			function m1() {
+				
+				//清除定时器
+				window.clearInterval(timeId);
+			}
+			
+		</script>
+	</body>
+</html>

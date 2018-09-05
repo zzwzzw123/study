@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = '{"id":101,"name":"tom","age":27}';
+			
+			//转换为JOSN对象的方式1
+			//var json = JSON.parse(str);
+			
+			//转换为JOSN对象的方式2
+			var json = eval('(' + str + ')');
+			
+			alert(json.name);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.p1 {
+				background: #0cc;
+				font-size: 36px;	
+			}			
+		</style>
+	</head>
+	<body>
+		<p>这是段落文字1</p>
+		<p>这是段落文字2</p>
+		<p>这是段落文字3</p>
+		<p>这是段落文字4</p>
+		<p>这是段落文字5</p>
+		<p>这是段落文字6</p>
+		<input type="button" value="改变样式" id="btn1" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			
+			$(document).ready(function(){
+				
+				$('#btn1').click(function(){
+					
+					var p = $('p'); //选择器多次使用，最好赋给本地变量，节省效率
+					
+					p.css('color','red');
+					p.addClass('p1');
+					
+				});				
+				
+			});			
+			
+		</script>		
+	</body>
+</html>

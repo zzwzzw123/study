@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.item {
+				width: 200px;
+				height: 200px;
+				background: #00CCCC;
+				line-height: 200px;
+				border: 1px solid #000000;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="javascript:void(0);">内容1</a>
+		<a href="javascript:void(0);">内容2</a>
+		<a href="javascript:void(0);">内容3</a>
+		
+		<div class="item">这是内容1...</div>
+		<div class="item">这是内容2...</div>
+		<div class="item">这是内容3...</div>
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				
+				var btns = document.getElementsByTagName('a');
+				var contents = document.getElementsByTagName('div');
+				
+				for(var i = 0;i < btns.length;i ++) {
+					
+					//利用闭包存储循环中的i，在onclick事件回调函数中使用	
+					(function(index) {
+						
+						btns[i].onclick = function() {
+						
+							contents[index].style.display = 'block';
+						}
+						
+					})(i);
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+
+	<body>
+		<form id="form1">
+			用户名
+			<input type="text" name="username" id="username"/>
+			<span id="msg"></span>
+			<br />
+			密&nbsp;&nbsp;码
+			<input type="password" name="userpwd" id="userpwd"/>
+		</form>	
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				$('#username').change(function() {
+					
+					username = $('#username').val();
+					
+					//判断用户名是否为空
+					if($('#username').val() == '') {
+						$('#msg').html('用户名不能为空');
+						$('#msg').css('color','red');
+						return;
+					}
+					
+					//文本框只读
+					$('#username').prop('readonly',true);
+					
+					//显示loading图片
+					$('#msg').html('<img src="img/loading-0.gif"/>');	
+					
+					$.get('CheckUsernameServlet',{username:username},function(data,status,xhr) {
+		
+						//根据响应的结果不同，显示不同颜色的提示
+						if (data == '1') {
+							$('#msg').html('此用户名已经被占用');
+							$('#msg').css('color','red');
+						} else {
+							$('#msg').html('此用户名可用使用');
+							$('#msg').css('color','green');
+						}
+						
+						//取消只读
+						$('#username').prop('readonly',false);
+					});
+
+				});
+			});
+		</script>
+	</body>
+</html>

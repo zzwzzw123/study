@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			div {
+				width: 100px;
+				height: 100px;
+				border:1px solid #CCCCCC;
+				font-size: 80px;
+				text-align: center;
+				line-height: 100px;
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1">中</div>
+		<div id="div2">软</div>
+		<div id="div3">国</div>
+		<div id="div4">际</div>
+		
+		<input type="button" value="队列动画" id="btn1" />
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function() {
+				
+				$('#btn1').click(function(){
+					
+					$('#div1').show(1000,function(){
+						
+						$('#div2').show(1000,function() {
+							
+							$('#div3').show(1000,function() {
+							
+								$('#div4').show(1000,function() {
+													
+							
+								});
+							
+							});
+							
+						});
+						
+					});
+					
+					
+				});
+				
+			});		
+		</script>		
+	</body>
+</html>

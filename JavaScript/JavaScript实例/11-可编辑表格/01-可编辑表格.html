@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table id="table1" width="400" border="1">
+			<tr>
+				<th width="33%">编号</th>
+				<th width="33%">姓名</th>
+				<th width="33%">年龄</th>
+			</tr>
+			<tr>
+				<td class="0">100</td>
+				<td>tom</td>
+				<td>27</td>
+			</tr>
+			<tr>
+				<td class="0">101</td>
+				<td>jack</td>
+				<td>25</td>
+			</tr>
+			<tr>
+				<td class="0">102</td>
+				<td>rose</td>
+				<td>26</td>
+			</tr>
+		</table>
+		
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				//给所有的单元格加上双击事件
+				$('#table1 td').dblclick(function(e) {
+					
+					//编号列不可修改
+					if ( $(this).hasClass('0') ) {
+						return;
+					}
+					
+					//创建文本框节点
+					var input = $('<input type="text" style="width:100%">');
+					
+					//设置文本框的内容为当前td的内容
+					input.val( $(this).text() );
+					
+					//设置文本框到td中
+					$(this).html(input);
+					
+					//文本框获得焦点
+					//input.focus();
+					
+					//选中
+					input.select();
+					
+					//把特大对象赋给变量
+					var that = this;
+					
+					//文本框失去焦点
+					input.blur(function() {
+						
+						//文本框内容设置到td中
+						$(that).text( $(this).val() );
+						
+					});
+					
+					//阻止文本框双击事件冒泡
+					input.dblclick(function() {
+						
+						return false;
+					})
+				});
+				
+			});
+		</script>
+	</body>
+</html>

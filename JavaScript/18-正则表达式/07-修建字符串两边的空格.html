@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="t1"/>
+		<input type="button" value="测试" onclick="trim();"/>
+		<script type="text/javascript">
+			/**
+			 * 传入一个任意字符串，修剪两个空格后返回
+			 * @param {Object} str
+			 */
+			function trim() {
+				
+				var t1 = document.getElementById('t1');
+				
+				var r = /^(\s*)(.*)(\s*)$/;
+
+				t1 = t1.value.replace(r,'$2')
+				
+				alert(t1);
+
+			}
+		</script>		
+	</body>
+</html>

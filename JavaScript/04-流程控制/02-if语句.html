@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="测试分数" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				var score = prompt('请输入一个分数');
+				
+				//判断是否点击了取消
+				if (score == null) {
+					alert('操作已经取消');
+					return;
+				}
+				
+				//去掉两边空格
+				score = score.replace(/^\s+/,'');
+				score = score.replace(/\s+$/,'');
+				
+				//判断是否空字符串
+				if(score == "") {
+					alert('成绩不能为空');
+					return;
+				}
+				
+				//判断是否为数字
+				if(isNaN(score)) {
+					alert('请输入一个数字');
+				}
+				
+				//转换为数字
+				score = parseFloat(score);
+				
+				//判断是否0~100之间
+				if (score < 0 || score > 100) {
+					alert('分数必须是0~100之间的数字');
+				} else {
+					//判断优良中及格不及格
+					if(score >= 90) {
+						alert('优秀');
+					} else if (score >= 80) {
+						alert('良好');
+					} else if (score >= 70) {
+						alert('中等');
+					} else if (score >= 60) {
+						alert('及格');
+					} else {
+						alert('不及格');
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

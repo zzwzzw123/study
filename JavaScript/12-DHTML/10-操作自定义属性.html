@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1" zzw="1001">
+			段落内容1
+		</p>
+		
+		<input type="button" value="读取自定义属性" onclick="m1();"/>
+		<script type="text/javascript">
+			function m1() {
+				var p1 = document.getElementById('p1');
+				//仅仅IE8及以下支持
+				alert(p1.zzw);//取值
+				
+				p1.zzw = 1002;//赋值
+				
+			}
+		</script>
+	</body>
+</html>

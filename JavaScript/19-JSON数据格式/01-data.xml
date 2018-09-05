@@ -1,0 +1,23 @@
+<?xml verson="1.0" encoding="utf-8"?>
+
+<root>
+	
+	<student>
+		<sid>100</sid>
+		<sname>tom</sname>
+		<sage>27</sage>
+	</student>
+	
+	<student>
+		<sid>101</sid>
+		<sname>jack</sname>
+		<sage>25</sage>
+	</student>
+	
+	<student>
+		<sid>102</sid>
+		<sname>rose</sname>
+		<sage>23</sage>
+	</student>
+	
+</root>

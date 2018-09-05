@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			for (var i = 1;i <= 100;i ++) {
+				document.write('<p>' + i + '</p>');	
+			}			
+		</script>
+				
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>			
+						
+			$(document).click(function(){
+				
+				//视口大小
+				var w = $(window).width();
+				var h = $(window).height();
+				
+				//alert('视口大小：' + w + ',' + h);	
+				
+				w = $(document).width();
+				h = $(document).height();
+				
+				alert('网页大小：' + w + ',' + h);
+				
+			});
+						
+		</script>
+	</body>
+</html>

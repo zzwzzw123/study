@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+			}
+			
+			#div1 {
+				background: orange;
+			}
+			
+			#div2 {
+				background: #00CCCC;
+				top:150px;
+			}
+						
+		</style>
+	</head>
+	<body>
+		<input type="button" value="开始动画" id="btn1" />
+				
+		<div id="div1">div1...</div>
+		<div id="div2">div2...</div>
+			
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function(){
+				
+				$('#btn1').click(function(){
+					
+					//利用延迟事件实现队列动画
+					$('#div1').animate({
+						left:500
+					},2000);
+					
+					$('#div2')
+						.delay(1000)
+						.animate({
+							left:500
+						},2000);
+										
+				});	
+						
+				
+				
+			});			
+		</script>
+	</body>
+</html>

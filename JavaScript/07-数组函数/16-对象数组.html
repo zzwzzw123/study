@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = [
+				{
+					id:100,
+					name:'tom',
+					age:27
+				},
+				{
+					id:101,
+					name:'jack',
+					age:29
+				},
+				{
+					id:102,
+					name:'rose',
+					age:26
+				},
+				{
+					id:103,
+					name:'john',
+					age:27
+				},
+			];
+			
+			a.sort(function(a,b){
+				
+				if(a.age != b.age) {
+					return a.age - b.age;
+				} else {
+					if(a.name > b.name){
+						return 1;
+					} else if(a.name < b.name) {
+						return -1;
+					} else {
+						return 0;
+					}
+				}			
+			});
+			
+			for (var i = 0;i < a.length;i ++) {
+				
+				console.log(a[i]);
+				
+			}
+			
+		</script>
+	</body>
+</html>

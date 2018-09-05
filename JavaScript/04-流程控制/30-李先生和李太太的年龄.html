@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/**
+			 *李先生的年龄的平方加上李太太的年龄之和是1053 
+			 *李太太年龄的平方加上李先生年龄的平方之和是873
+			 *假设李先生和李太太的年龄是1~100之间
+			 *问李先生和李太太的年龄各自是多少？
+			 */
+
+			for(var i = 1;i <= 100;i ++){
+				for(var j = 1;j <= 100;j ++) {
+					if(i * i + j == 1053 && j * j + i == 873) {
+						document.write('i=' + i + 'j=' + j);
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

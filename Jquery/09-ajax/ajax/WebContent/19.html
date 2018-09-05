@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="发出多个请求" id="btn1"/>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					var ajax1 = $.ajax({
+						type:"get",
+						url:"RequestServlet",
+						async:true
+					})
+					.done(function(data) {
+						alert('请求1结束');
+					})
+					
+					var ajax2 = $.ajax({
+						type:"get",
+						url:"RequestServlet2",
+						async:true
+					})
+					.done(function(data) {
+						alert('请求2结束');
+					})
+					
+					//做promi形式在回调
+					$.when(ajax1,ajax2)
+						.done(function() {
+							//当多个异步请求全部成功完成回调函数
+							alert('请求全部成功');
+						})
+						.fail(function() {
+							//有一个请求失败回调函数
+							alert('有一个请求失败了');						
+						});
+					
+				});			
+				
+			});
+		</script>
+	</body>
+</html>

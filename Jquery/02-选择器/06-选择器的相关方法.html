@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="box">
+			<li>列表元素1</li>
+			<li>列表元素2</li>
+			<li>列表元素3</li>
+			<li>列表元素4</li>
+			<li class="red">列表元素5</li>
+			<li>列表元素6</li>
+			<li>列表元素7</li>
+			<li>列表元素8</li>
+			<li>列表元素9</li>
+			<li>列表元素10</li>			
+		</ul>
+		
+		<ul>
+			<li>列表元素1</li>
+			<li>列表元素2</li>
+			<li>列表元素3</li>
+			<li>列表元素4</li>
+			<li>列表元素5</li>
+			<li>列表元素6</li>
+		</ul>
+		
+		<h3 class="1">这个一个h3标题</h3>
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			
+			$(function(){
+				
+				//下标
+//				$('li').eq(6).css('color','red');
+				
+				//第一个最后一个 
+//				$('li').first().css('color','green');
+//				$('li').last().css('color','blue');
+				
+				//判断元素是否应用了某个class类
+//				alert( $('h3').hasClass('1') );
+
+				//过滤缩小选择器的范围
+//				$('li').filter('.red').css('color','red');
+
+				//判断当前元素是不是某个选择器
+//				alert( $('.red').is('li') );
+//				alert( $('li').eq(4).is('.red') );
+
+				//包含某个选择器子元素的元素
+//				$('ul').has('.red').css('background','#0cc');
+				
+				//一个下标的范围
+//				$('li').slice(3,7).css('color','red');
+
+				//获得元素的父元素中的下标
+//				alert( $('.red').index() );				
+				
+			});			
+		</script>		
+	</body>
+</html>

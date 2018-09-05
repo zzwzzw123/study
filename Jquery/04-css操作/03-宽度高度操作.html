@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#div1 {
+				width: 200px;
+				padding: 50px;
+				border:5px solid #cccccc;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<p>段落内容1</p>
+			<p>段落内容2</p>
+			<p>段落内容3</p>
+			<p>段落内容4</p>
+			<p>段落内容5</p>
+			<p>段落内容6</p>
+		</div>
+		
+		<input type="button" value="读取宽度高度" id="btn1" />
+		<input type="button" value="读取宽度高度2" id="btn2" />
+		<input type="button" value="读取宽度高度3" id="btn3" />
+		<input type="button" value="读取宽度高度4" id="btn4" />		
+		<input type="button" value="设置宽度高度" id="btn5" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			$(function(){
+				
+				$('#btn1').click(function() {
+					
+					//返回宽度高度，仅仅是内容区
+					var w = $('#div1').width();
+					var h = $('#div1').height();
+					
+					alert(w + ',' + h);
+				});
+				
+				$('#btn2').click(function() {
+					
+					//返回宽度高度，内容+padding
+					var w = $('#div1').innerWidth();
+					var h = $('#div1').innerHeight();
+					
+					alert(w + ',' + h);
+				});
+				
+				$('#btn3').click(function() {
+					
+					//返回宽度高度，内容+padding+border
+					var w = $('#div1').outerWidth();
+					var h = $('#div1').outerHeight();
+					
+					alert(w + ',' + h);
+				});
+				
+				$('#btn4').click(function() {
+					
+					//返回宽度高度，内容+padding+border+margin
+					var w = $('#div1').outerWidth(true);
+					var h = $('#div1').outerHeight(true);
+					
+					alert(w + ',' + h);
+				});
+				
+				
+				$('#btn5').click(function() {
+					
+					//设置宽度高度
+					$('#div1').width(400).height(400);
+					
+				});
+				
+				
+			});			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="t1" placeholder="请输入任意一个浮点数"/>
+		<input type="text" id="t2" placeholder="请输入要保留的位数"/>
+		<input type="button" value="转换" onclick="m1();"/>
+		<script type="text/javascript">
+			function m1() {
+				var swith = document.getElementById('t1');
+				var wei = document.getElementById('t2');
+				var zhi = parseInt(t1.value * Math.pow(10,t2.value));
+				var jieguo = zhi / Math.pow(10,t2.value);
+				alert('保留后的结果是：' + jieguo);	
+			}
+		</script>
+	</body>
+</html>

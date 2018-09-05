@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1 {
+				width: 200px;
+				height: 200px;
+				background: #00CCCC;
+				margin: 100px;
+			}
+			
+			#div2 {
+				width: 100px;
+				height: 100px;
+				background: #CCCCCC;
+				margin: 50px;
+			}			
+		</style>
+	</head>
+	<body>
+		
+		<div id="div1">
+			div1...
+			<div id="div2">
+				div2...
+			</div>
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			
+			$(function() {
+				
+				//事件对象本身已经做过兼容
+				$('#div1').click(function(e){
+					
+					//事件源对象
+					console.log(e.target);
+					//注册事件的对象（原生JS对象）
+					console.log(this);	
+					//同this
+					console.log(e.currentTarget)
+					//事件类型
+					console.log(e.type);
+					//相对于事件源的位置
+					console.log(e.offsetX + ',' + e.offsetY);				
+					//事件发生的时间戳
+					console.log(e.timeStamp);				
+				});
+				
+				//鼠标按键
+				$(document).mousedown(function(e){
+					
+					alert(e.which);
+					
+				});	
+				
+				//键盘按键
+				$(document).keydown(function(e){
+					
+					alert(e.which);
+					
+				});			
+				
+				
+			});
+			
+			
+		</script>
+		
+	</body>
+</html>

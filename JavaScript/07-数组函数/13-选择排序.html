@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = [1,56,83,12];
+			
+			for (var i = 0;i <= a.length - 1;i ++) {
+				
+				var min = i;//假定最小元素的下标
+				
+				for (var j = i + 1;j <= a.length;j ++) {
+					
+					if (a[j] < a[min] ) {
+						min = j;
+					}
+				}
+				
+				if (i == min) {
+					continue;
+				}
+				
+				var temp = a[i];
+				a[i] = a[min];
+				a[min] = temp;
+			}
+			
+			console.log(a);
+			
+		</script>
+	</body>
+</html>

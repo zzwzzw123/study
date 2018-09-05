@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				border: 1px solid #000;
+			}			
+		</style>
+	</head>
+	<body>
+		<span>ssss1</span>
+		<span>ssss2</span>
+		
+		<div id="div1">		
+			div1...
+			<div id="div2">
+				div2....
+				<p>pppp1</p>
+			</div>			
+		</div>
+		
+		<p id="p2">pppp2</p>
+		
+		<input type="button" value="append" id="btn1" />
+		<input type="button" value="appendTo" id="btn2" />
+		<input type="button" value="prepend" id="btn3" />
+		<input type="button" value="prependTo" id="btn4" />
+		
+		<input type="button" value="after" id="btn5" />
+		<input type="button" value="before" id="btn6" />
+		<input type="button" value="insertAfter" id="btn7" />
+		<input type="button" value="insertBefore" id="btn8" />
+		
+		<input type="button" value="wrap" id="btn9" />
+		<input type="button" value="unwrap" id="btn10" />
+		<input type="button" value="wrapAll" id="btn11" />
+		<input type="button" value="wrapInner" id="btn12" />
+		
+		<input type="button" value="replaceWith" id="btn13" />
+		<input type="button" value="replaceAll" id="btn14" />
+		
+		<input type="button" value="empty" id="btn15" />
+		<input type="button" value="remove" id="btn16" />
+		
+		<input type="button" value="clone" id="btn17" />
+						
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function(){
+				
+				$('#btn1').click(function() {
+					
+					//创建dom节点
+					//var div3 = $('<div id="div3">div3...</div>');					
+					//追加到div1中
+					//$('#div1').append(div3);
+					
+					//直接添加节点
+					$('#div1').append('<div id="div3">div3...</div>');										
+				});
+				
+				$('#btn2').click(function() {
+										
+					//把div3追加到div1，方法的返回值是div3对象
+					$('<div id="div3">div3...</div>').appendTo('#div1');										
+				});
+				
+				
+				$('#btn3').click(function() {
+										
+					//直接添加节点，在开始位置追加
+					$('#div1').prepend('<div id="div3">div3...</div>');										
+				});
+				
+				$('#btn4').click(function() {
+										
+					//把div3追加到div1，方法的返回值是div3对象
+					$('<div id="div3">div3...</div>').prependTo('#div1');										
+				});
+				
+				$('#btn5').click(function() {
+						
+					//外部插入平级元素	
+					$('#div1').after('<div id="div3">div3...</div>');
+					
+				});
+				
+				$('#btn6').click(function() {
+						
+					//外部插入平级元素，上面位置	
+					$('#div1').before('<div id="div3">div3...</div>');
+					
+				});
+				
+				$('#btn7').click(function() {
+						
+					//外部插入平级元素	
+					$('<div id="div3">div3...</div>').insertAfter('#div1');
+					
+				});
+				
+				$('#btn8').click(function() {
+						
+					//外部插入平级元素，上面位置	
+					$('<div id="div3">div3...</div>').insertBefore('#div1');
+					
+				});	
+				
+				
+				$('#btn9').click(function() {
+					
+					//div3包裹div1
+					$('#div1').wrap('<div id="div3">div3...</div>');
+					
+				});	
+				
+				
+				$('#btn10').click(function() {
+					
+					//去到div2的外层元素
+					$('#div2').unwrap();
+					
+				});
+				
+				
+				$('#btn11').click(function() {
+					
+					//一个div3包裹所有的span
+					$('span').wrapAll('<div id="div3">div3...</div>');
+					
+				});	
+				
+				$('#btn12').click(function() {
+					
+					//内层包裹
+					$('#div1').wrapInner('<div id="div3">div3...</div>');
+					
+				});
+				
+				$('#btn13').click(function() {
+					
+					//替换元素
+					$('span').replaceWith('<h1>hello</h1>');
+					
+					
+				});
+				
+				$('#btn14').click(function() {
+					
+					//替换元素，主谓颠倒
+					$('<h1>hello</h1>').replaceAll('span');
+										
+				});
+				
+				$('#btn15').click(function() {
+					
+					//清空
+					$('#div1').empty();
+					
+										
+				});
+				
+				$('#btn16').click(function() {
+					
+					//删除
+					$('#div1').remove();
+															
+				});
+				
+				$('#btn17').click(function() {
+					
+					//移动元素
+					//$('#div1').append( $('#p2') );
+					
+					//克隆元素
+					$('#div1').append( $('#p2').clone() );
+															
+				});
+								
+				
+			});			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			摄氏转华氏 华氏度=摄氏度*1.8+32
+		-->
+		<input type="tel" placeholder="请输入一个温度" id="t1"/>
+		<input type="text" placeholder="转换结果" id="t2"/>
+		<input type="button" value="华氏转换为摄氏温度" onclick="f2c();"/>
+		<input type="button" value="摄氏转换为华氏温度" onclick="c2f();"/>
+		
+		<script type="text/javascript">
+			//华氏转摄氏
+			function f2c() {
+				var h = document.getElementById('t1');
+				h = parseFloat(h.value);
+				t2.value = (h - 32) / 1.8;
+				
+			}
+			
+			//摄氏转华氏
+			function c2f() {
+				var h = document.getElementById('t1');
+				h = parseFloat(h.value);
+				t2.value = h * 1.8 + 32;
+			}
+		</script>
+	</body>
+</html>

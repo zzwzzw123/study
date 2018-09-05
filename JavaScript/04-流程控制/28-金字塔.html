@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//循环输出以下5行金字塔形状
+			var a = prompt('请输入行数')
+			for (var i = 0; i < a; i++) {
+				
+				for (var k = 1; k <= a - i; k ++) {
+					document.write('&nbsp&nbsp');
+				}
+				
+				for (var j = 0; j <= 2 * i; j ++) {
+					document.write('*' + ' ');
+				}
+				document.write('' + '<br />');
+			}
+		</script>
+	</body>
+</html>

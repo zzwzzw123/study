@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		账号
+		<input type="text" id="username"/>
+		密码
+		<input type="text" id="userpwd"/>
+		
+		<input type="button" value="post请求1" id="btn1"/>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					var param = {
+						username:$('#username').val(),
+						userpwd:$('#userpwd').val()
+					}
+					
+					//post请求
+					$.post('RequestServlet',param,function(data,status,xhr) {
+						
+						//成功回调
+						alert(data);//响应的数据
+						alert(status);//请求的结果状态
+						alert(xhr.status);//原生js的ajax核心对象
+						
+					})
+					.error(function(xhr,errorStatus,errorText) {
+						
+						//失败回调
+						alert('请求失败：' + errorStatus + ',' + errorText);
+						
+					})
+					.complete(function(xhr,status) {
+						
+						//完成回调
+						alert('请求完成' + status);
+						
+					});
+				});
+				
+			});
+		</script>
+	</body>
+</html>

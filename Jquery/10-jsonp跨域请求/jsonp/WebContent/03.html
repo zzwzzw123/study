@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<input type="button" value="jsonp请求" onclick="sendJsonp();"/>
+	
+	<script type = "text/javascript">
+	
+		function update(obj) {
+
+			alert(obj.name + ',' + obj.age);
+			
+		}
+		
+		function sendJsonp() {
+			
+			//创建script节点
+			var script = document.createElement('script');
+			//设置src属性
+			script.src = "http://127.0.0.1:7777/jsonp/JsonpServlet?callback=update&_=" + (new Date().getTime());
+			//追加节点
+			document.body.appendChild(script);
+			
+		}
+	</script>
+	
+</body>
+</html>

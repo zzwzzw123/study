@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<table bgcolor="orange" border="1" width="500" align="center">
+			<tr height="36">
+				<td>aaa</td>
+				<td>bbb</td>
+			</tr>
+		</table>-->
+		<script type="text/javascript">
+			var bgColor = prompt('请输入表格背景颜色');
+			var border = prompt('请输入表格边框宽度');
+			var width = prompt('请输入表格宽度');
+			var align = prompt('请输入表格对齐方式');
+			var height = prompt('请输入表格行的高度');
+			var td1 = prompt('请输入单元格1的内容');
+			var td2 = prompt('请输入单元格2的内容');
+			
+			var table = '<table bgcolor="' + bgColor + '" border="' + border + '" width="' + width + '" align="' + align + '">'
+				table += '	<tr height="' + height + '">'
+				table += '		<td>' + td1 + '</td>'
+				table += '		<td>' + td2 + '</td>'
+				table += '	</tr>'
+				table += '</table>'
+			document.write(table);
+		</script>
+	</body>
+</html>

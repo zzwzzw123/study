@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function m1() {
+				alert('hello');
+				return;//退出函数，回到调用者语句继续向下执行
+				alert('world');//永远没有机会执行的语句（不可达代码）
+			}
+			
+			m1();
+			
+			document.write('程序结束');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1">
+			<b>你好，中国</b>
+		</p>
+		
+		<input type="button" value="读取text" id="btn1" />
+		<input type="button" value="设置text" id="btn2" />
+		<input type="button" value="读取html" id="btn3" />
+		<input type="button" value="设置html" id="btn4" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					alert( $('#p1').text() );
+										
+				});	
+				
+				$('#btn2').click(function() {
+					
+					$('#p1').text('<i>hello,world</i>');
+					
+				});
+				
+				$('#btn3').click(function() {
+					
+					alert( $('#p1').html() );
+										
+				});	
+				
+				$('#btn4').click(function() {
+					
+					$('#p1').html('<i>hello,world</i>');
+					
+				});
+								
+				
+			});			
+		</script>		
+	</body>
+</html>

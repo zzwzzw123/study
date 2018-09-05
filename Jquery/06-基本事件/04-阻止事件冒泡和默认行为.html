@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1 {
+				width: 200px;
+				height: 200px;
+				background: #00CCCC;
+				margin: 100px;
+			}
+			
+			#div2 {
+				width: 100px;
+				height: 100px;
+				background: #CCCCCC;
+				margin: 50px;
+			}			
+		</style>
+	</head>
+	<body>
+		
+		<div id="div1">
+			div1...
+			<div id="div2">
+				div2...
+			</div>
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			
+			$(function() {
+				
+				//
+				$('#div1').click(function(e){
+					
+					alert('div1');
+					
+				});
+				
+				//
+				$('#div2').click(function(e){
+					
+					alert('div2');
+					
+					//阻止事件冒泡
+					e.stopPropagation();					
+				});	
+				
+				
+				$(document).contextmenu(function(e) {
+					
+					alert('禁止右键！');
+					
+					//阻止事件默认行为
+					e.preventDefault();
+					
+				});
+				
+			});
+			
+			
+		</script>
+		
+	</body>
+</html>

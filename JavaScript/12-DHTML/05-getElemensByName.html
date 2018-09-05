@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="t1" value="tom"/>
+		<input type="text" name="t1" value="jack"/>
+		<input type="text" name="t1" value="rose"/>
+		<input type="button" value="获得对象" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				
+				//返回对象的类数组
+				var inputs = document.getElementsByName('t1');
+			
+				alert('元素的个数： ' + inputs.length);
+				
+				//遍历对象
+				for (var i = 0;i <inputs.length;i ++) {
+					alert(inputs[i].value);
+					inputs[i].style.background = '#0cc';
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//输出20行四位大写字母随机验证码
+			for(var i = 0;i < 20;i ++){
+				for(var j = 0;j < 3;j ++) {
+					
+					var r = parseInt( (90 - 65 + 1) * Math.random() + 65);
+					document.write(String.fromCharCode(r));
+				}
+				var r = parseInt( (90 - 65 + 1) * Math.random() + 65);
+				document.write(String.fromCharCode(r) + '<br />');
+			}
+		</script>
+	</body>
+</html>

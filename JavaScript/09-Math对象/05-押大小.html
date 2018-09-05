@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+			<form name="form1">
+				<input type="radio" value="大" name="guess"/>大
+				<input type="radio" value="小" name="guess"/>小
+				<input type="button" value="开盘" onclick="m1();"/>
+			</form>
+		
+		<script type="text/javascript">
+			alert('你现在有90分，每次赢了加10分，输了扣十分，1~5是小，6~10是大开始游戏吧')
+			var score = 90;
+			
+			function m1() {
+				
+				//获得单选按钮对象
+				var guess = document.form1.guess;
+				
+				//产生一个1~10之间的随机数，1~5是小，6~10是大
+				var r = parseInt( (10 - 1 + 1) * Math.random() + 1);
+				
+				var a = 0;
+				if (r <= 5 && r >= 1) {
+					a = -1;
+				} else if (r >= 6 && r <= 10) {
+					a = 1;
+				}
+
+				if(a == 1) {
+					alert('开盘结果是：' + r + ' ' + '所以本局是: 大' + ' ' +  '你选的是：' + guess.value);
+					if(guess.value == '大'){
+						score = score + 10;
+						alert('抱歉，你赢了' + ' ' + '你的分数还剩：' + score);
+					} else {
+						score = score - 10;
+						alert('恭喜，你输了' + ' ' + '你的分数还剩：' + score);
+					}
+				} else if (a == -1){
+					alert('开盘结果是：' + r + ' ' + '所以本局是: 小' + ' ' +  '你选的是：' + guess.value);
+					if(guess.value == '小'){
+						score = score + 10;
+						alert('抱歉，你赢了' + ' ' + '你的分数还剩：' + score);
+					} else {
+						score = score - 10;
+						alert('恭喜，你输了' + ' ' + '你的分数还剩：' + score);
+					}
+				}	
+				
+				if (score == 0) {
+					alert('你没分了,游戏结束');
+					window.close();
+					return;
+				} else if(score == 100) {
+					alert('你赢了,再来一局吧');
+					m1();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="t1"/>
+		<input type="button" value="测试" onclick="m1();"/>
+		<script type="text/javascript">
+			function m1() {
+				
+				var t1 = document.getElementById('t1');
+				
+				//var r = new RegExp('abc','i');
+				//r = /abc/i;
+				
+				// \表示转义字符
+				//r = /\|/;
+				
+				//^表示限制开头，$表示限制结尾
+				//r = /^abc$/;
+				
+				//.表示一个什么字符都匹配，不能什么都不输人，不能输入多个
+				//r = /^.$/;
+				
+				
+				//r = /^[abc]$/;
+				
+				//手机 格式
+				//r = /^1[345678]\d{9}$/;
+				
+				//千分位
+				//r = /^[1-9]\d{0,2}(,\d{3})*$/
+				
+				//邮箱格式
+				r = /^\w+@\w+(\.[a-z]{2,4}){1,2}$/;
+				
+				alert(r.test(t1.value));
+				
+			}
+		</script>
+	</body>
+</html>

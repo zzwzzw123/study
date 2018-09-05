@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="text" placeholder="请输入搜索的内容" id="t1"/>
+		
+		<a href="http://192.168.30.254" id="a1">xx企业网</a>
+		
+		<input type="button" value="产生click" id="btn1"/>
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				
+				var t1 = document.getElementById('t1');
+				
+				//获得焦点的方法
+				t1.focus();
+				
+				var btn1 = document.getElementById('btn1');
+				var s1 = document.getElementById('a1');
+				
+				btn1.onclick = function() {
+					
+					//链接发生单击行为
+					a1.click();
+				}
+				
+			}
+		</script>
+	</body>
+</html>

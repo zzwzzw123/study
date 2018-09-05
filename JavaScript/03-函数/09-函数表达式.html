@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			m1();//可以调用
+//			m2();//找不到函数
+			
+			//函数声明会自动提升
+			alert(m1);
+			alert(m2);
+			
+			//函数声明
+			function m1(){
+				alert('hello,world');
+			}
+			
+			//函数表达式
+			var m2 = function() {
+				alert('你好，世界');
+			}
+		</script>
+	</body>
+</html>

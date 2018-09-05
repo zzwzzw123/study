@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+			var a = 10;
+			
+			//断点调试，可以让程序单步运行
+			debugger;
+			
+			a = 100;
+			
+			a = a + 1;
+			
+			a = 'hello';
+			
+//			alert(a);
+
+			function m1(a,b) {
+				var c = a + b;
+				a = a + 1;
+				b = b + 2;
+				c = a + b + c;
+				
+				return c;
+			}
+			
+			var result = m1(5,3);
+			alert('结果是' + result);
+		</script>
+	</body>
+</html>

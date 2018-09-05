@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: 12px;
+			}
+			
+			table {
+				width: 600px;
+				display: block;
+				margin: 20px auto;
+				border-collapse: collapse;
+			}	
+			
+			table td {
+				border: 1px solid #000;
+				height: 30px;
+			}	
+			
+			table tr td:first-child {
+				text-align: center;
+			}	
+		</style>
+	</head>
+	<body >
+		<form id="form1" name="form1" action="xxx.jsp" method="get" 
+			enctype="application/x-www-form-urlencoded">
+			<table border="0" width="600" align="center"
+				cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="2" align="center">
+						请输入注册信息
+					</td>
+				</tr>
+				<tr>
+					<td width="100">用户名</td>
+					<td width="500">
+						<input type="text" id="username" name="username"
+							maxlength="6" placeholder="请输入用户名"
+							value="tom" size="20" readonly/>						
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">设置密码</td>
+					<td width="500">
+						<input autofocus type="password" id="userpwd" name="userpwd" />						
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">自我介绍</td>
+					<td width="500">
+						<textarea id="myinfo" name="myinfo" 
+							rows="5" cols="50">没有什么可说的</textarea>						
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">性别</td>
+					<td width="500">
+						<label for="boy">
+							<input type="radio" id="boy" name="sex" value="男"/ checked>	先生
+						</label>
+						<label for="girl">
+							<input type="radio" id="girl" name="sex" value="女"/>女士
+						</label>
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">技能</td>
+					<td width="500">
+						<input type="checkbox" value="java" name="skill" checked/>java
+						<input type="checkbox" value="oracle" name="skill"/>oracle
+						<input type="checkbox" value="linux" name="skill" checked/>linux
+						<input type="checkbox" value="ssm" name="skill"/>ssm
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">城市</td>
+					<td width="500">
+						<select name="city" id="city">
+							<option value="beijing">北京</option>
+							<option value="shanghai">上海</option>
+							<option value="shenzhen" selected>深圳</option>
+							<option value="guangzhou">广州</option>
+						</select>						
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">上传照片</td>
+					<td width="500">
+						<input type="file" id="photo" name="photo" />						
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">隐藏域</td>
+					<td width="500">
+						<input type="hidden" id="code" name="code" value="1001" />						
+					</td>					
+				</tr>
+				<tr>					
+					<td colspan="2">
+						<input type="submit" value="立即注册" />	
+						<input type="reset" value="重置" disabled/>
+						<input type="button" value="普通按钮" onclick="window.print();" />
+					</td>					
+				</tr>
+			</table>			
+		</form>
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>			
+			$(function() {
+				
+				var i;
+				
+//				i = $('#form1 input').length;				
+//				alert(i);
+				
+				//所有的表单元素，包括textarea select button
+//				i = $('#form1 :input').length;				
+//				alert(i);
+
+				//单行文本框 
+//				i = $('#form1 :text').length;
+//				alert(i);
+				
+				//密码框
+//				i = $('#form1 :password').length;
+//				alert(i);
+				
+				//单选按钮
+//				i = $('#form1 :radio').length;
+//				alert(i);
+				
+				//复选按钮
+//				i = $('#form1 :checkbox').length;
+//				alert(i);
+				
+				//提交按钮
+//				i = $('#form1 :submit').length;
+//				alert(i);
+				
+				//重置按钮
+//				i = $('#form1 :reset').length;
+//				alert(i);
+				
+				//普通按钮
+//				i = $('#form1 :button').length;
+//				alert(i);
+
+				//文件域
+//				i = $('#form1 :file').length;
+//				alert(i);
+				
+				//没有:select，直接select选择器
+//				i = $('#form1 select').length;
+//				alert(i);
+
+				//隐藏域
+//				i = $('#form1 input:hidden').length;
+//				alert(i);
+				
+				//禁用的元素
+//				i = $('#form1 :disabled').length;
+//				alert(i);
+				
+				//可用的元素
+//				i = $('#form1 :enabled').length;
+//				alert(i);
+
+				//选中的元素
+//				i = $('#form1 :checkbox:checked').length;
+//				alert(i);
+				
+				//选中的元素
+//				i = $('#form1 :selected').val();
+//				alert(i);
+				
+				//获得焦点的元素
+				i = $('#form1 :focus').length;
+				alert(i);
+								
+			});				
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#div1 {
+				width: 400px;
+				height: 400px;
+				background: #00CCCC;
+				margin-top: 200px;
+				margin-left: 100px;
+				position: relative;
+			}
+			
+			#div2 {
+				width: 200px;
+				height: 200px;
+				background: #CCCCCC;
+				margin-left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<script>
+			for (var i = 1;i <= 100;i ++) {
+				document.write('<p>' + i + '</p>');	
+			}			
+		</script>
+		
+		<div id="div1">
+			div1...
+			<div id="div2">
+				div2...
+			</div>			
+		</div>	
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			
+			$(document).click(function() {
+				
+				//获得元素相对于网页原点的位置
+				var top = $('#div1').offset().top;
+				var left = $('#div1').offset().left;
+				
+				alert(top + ',' + left);
+				
+				top = $('#div2').offset().top;
+				left = $('#div2').offset().left;
+				
+				alert(top + ',' + left);				
+				
+			});			
+						
+		</script>
+	</body>
+</html>

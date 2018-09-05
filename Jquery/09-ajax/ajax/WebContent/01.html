@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="get请求1" id="btn1"/>
+		<input type="button" value="get请求2" id="btn2"/>
+		<input type="button" value="get请求3" id="btn3"/>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					/**
+					 * 参数列表，参数1：请求URL，参数2：请求参数,
+					 * 参数3：请求成功回调函数，函数的参数1就是响应的数据,参数2是请求结果状态，参数3是原生js的ajax核心对象
+					 */
+					$.get('RequestServlet',{username:'tom',userpwd:'123456'},function(data,status,xhr) {
+						
+						alert(data);//响应的数据
+						alert(status);//请求的结果状态
+						alert(xhr.status);//原生js的ajax核心对象
+						
+					});
+				});
+				
+				$('#btn2').click(function() {
+					
+					/**
+					 * url重写方式传递数据
+					 */
+					$.get('RequestServlet?username=tom&userpwd=123456',function(data,status,xhr) {
+						
+						alert(data);//响应的数据
+						alert(status);//请求的结果状态
+						alert(xhr.status);//原生js的ajax核心对象
+						
+					});
+				});
+				
+				$('#btn3').click(function() {
+					
+					/**
+					 * 第四个参数代表响应的类型
+					 */
+					$.get('RequestServlet',{username:'tom',userpwd:'123456'},function(data,status,xhr) {
+						
+						alert(data);//响应的数据
+						alert(status);//请求的结果状态
+						alert(xhr.status);//原生js的ajax核心对象
+						
+					},'text');
+				});
+				
+			});
+		</script>
+	</body>
+</html>

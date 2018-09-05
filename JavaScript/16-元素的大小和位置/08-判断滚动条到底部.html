@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			for (var i = 1;i <= 100;i ++) {
+				document.write('<p>' + i + '</p>');	
+			}	
+			
+			window.onscroll = function() {
+				
+				//视口高度
+				var windowHeight = document.documentElement.clientHeight;
+				
+				//滚动条位置
+				var sTop = document.documentElement.scrollTop || document.body.scrollTop;
+				
+				//网页实际高度
+				var pageHeight = document.body.scrollHeight;
+				
+				if (windowHeight + sTop >= pageHeight) {
+					alert('已经到网页底部了');
+				}				
+				
+			}
+		</script>
+	</body>
+</html>

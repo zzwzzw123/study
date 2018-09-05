@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>		
+		<input type="button" value="json请求1" id="btn1" />
+		
+		<input type="button" value="调用m1函数" onclick="m1();"/>
+								
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			$(function() {
+												
+				$('#btn1').click(function() {
+					
+					//动态加载外联js
+					$.getScript('script.js');
+					
+				});
+								
+			});			
+		</script>
+	</body>
+</html>

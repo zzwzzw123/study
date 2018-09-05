@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p id="p1">段落内容1</p>
+			<p id="p2">段落内容2</p>
+			<p id="p3">段落内容3</p>
+		</div>
+		
+		<input type="button" value="删除子节点" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			
+			function m1() {
+				
+				var div1 = document.getElementById('div1');
+				var p3 = document.getElementById('p3');
+				
+				//删除节点
+				div1.removeChild(p3);
+				
+			}
+		</script>
+	</body>
+</html>

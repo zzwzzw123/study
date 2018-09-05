@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="">
+			<select id="state">
+				<option value="">请选择省份</option>
+			</select>
+			<select id="city">
+				<option value="">请选择城市</option>
+			</select>
+		</form>
+		
+		<script type="text/javascript">
+			
+			//数据
+			var area = [
+				{
+					state:'辽宁',
+					city:['沈阳','大连','鞍山','抚顺','本溪']
+				},
+				{
+					state:'吉林',
+					city:['长春','吉林','四平','通话']
+				},
+				{
+					state:'黑龙江',
+					city:['哈尔滨','齐齐哈尔','牡丹江','大庆']
+				},
+			];
+			
+			window.onload = function() {
+				
+				var state = document.getElementById('state');
+				var city = document.getElementById('city');
+				
+				//循环添加省份数据
+				for (var i = 0;i < area.length;i ++) {
+					
+					var opt = new Option(area[i].state,area[i].state);
+					
+					state.add(opt);
+				}
+				
+				//省份变化循环添加城市数据
+				state.onchange = function() {
+					
+					//清空城市
+					city.options.length = 1;
+					//选中的下标
+					var index = this.selectedIndex;
+					
+					//判断下标是否是第一个option
+					if(index == 0) {
+						return;
+					}
+					
+					//取出对应的城市列表
+					var citys = area[index-1].city;
+					
+					//循环添加城市
+					for(var i= 0;i < citys.length;i ++) {
+						
+						var opt = new Option(citys[i],citys[i]);
+						city.add(opt);
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

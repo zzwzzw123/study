@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.red {
+				color: red;
+			}
+			
+			.green {
+				color: green;
+			}
+			
+			.bg {
+				background: #00CCCC;
+			}
+			
+			.size {
+				font-size: 36px;
+			}			
+		</style>
+	</head>
+	<body>
+		<div id="div1">这是div1的内容</div>
+		<div id="div2">这是div2的内容</div>
+		
+		<input type="button" value="添加样式" id="btn1" />
+		<input type="button" value="删除样式" id="btn2" />		
+		<input type="button" value="开关样式" id="btn3" />
+		<input type="button" value="自定义开关样式" id="btn4" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			$(function() {
+				
+				$('#btn1').click(function(e) {
+					
+					//添加样式类，一个或多个
+					$('#div1').addClass('red bg size');
+					
+				});	
+				
+				$('#btn2').click(function(e) {
+					
+					//删除样式类
+					$('#div1').removeClass('bg size');
+					
+				});
+				
+				$('#btn3').click(function(e) {
+					
+					//开关样式类
+					$('#div1').toggleClass('red');
+					
+				});	
+				
+				$('#btn4').click(function(e) {
+					
+					var div1 = $('#div1');
+					
+					if ( div1.hasClass('red') ) {						
+						div1.removeClass('red');
+						div1.addClass('green');						
+					} else {
+						div1.removeClass('green');
+						div1.addClass('red');						
+					}				
+					
+				});	
+				
+			});			
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#dialog {
+				width: 177px; 
+				height: 219px;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="dialog">
+			<img src="plane.png"/>
+		</div>
+		
+		
+		<script type="text/javascript">
+			window.onload = function() {
+		
+				//div对象
+				var dialog = document.getElementById('dialog');
+				var i = 0;
+				var j = 0;
+				window.onkeydown = function(e) {
+					
+					e = window.event || e;
+					
+					if (e.keyCode == 37) {
+						i -= 100;
+					}
+					
+					if (e.keyCode == 38) {
+						j -= 100;
+					}
+					
+					if (e.keyCode == 39) {
+						i += 100;
+					}
+					
+					if (e.keyCode == 40) {
+						j += 100;
+					}
+					
+					//获得元素宽度高度
+					var divWidth = dialog.offsetWidth;
+					var divHeight = dialog.offsetHeight;
+					
+					//获得视口的宽度高度
+					var windowWidth = document.documentElement.clientWidth;
+					var windowHeight = document.documentElement.clientHeight;
+					
+					var r = dialog.getBoundingClientRect();
+					
+					if (j < 0) {
+						j = 0;
+					}
+					
+					if (j > windowHeight - divHeight) {
+						j = windowHeight - divHeight;
+					}
+					
+					if (i < 0) {
+						i = 0;
+					}
+					
+					if (i > windowWidth - divWidth) {
+						i = windowWidth - divWidth;
+					}
+					
+					
+					
+					dialog.style.left = i + 'px';
+					dialog.style.top = j + 'px';
+				}
+			}		
+		</script>
+	</body>
+</html>

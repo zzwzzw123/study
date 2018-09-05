@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="jsonp请求" id="btn1"/>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					//$.getJSON()实现jsonp形式的跨域请求,?callback=?表示这是jsonp请求
+					var url = "http://127.0.0.1:7777/jsonp/JsonpServlet?callback=?";
+					
+					$.getJSON(url,function(data) {
+						
+						alert(data.name + ',' + data.age);
+						
+					})
+					.error(function() {
+						
+						alert('请求失败');
+						
+					})
+				});
+				
+			});			
+		</script>
+	</body>
+</html>

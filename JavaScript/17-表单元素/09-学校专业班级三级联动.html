@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select id="school">
+		<option value="">请选择学校</option>
+	</select>
+	<select id="xi">
+		<option value="">请选择专业</option>
+	</select>
+	<select id="classes">
+		<option value="">请选择班级</option>
+	</select>
+
+	<script type="text/javascript">
+		var school = ["清华大学","北京大学","北京邮电"];
+
+		var xi = [
+			["物理系","自动化系","计算机系","软件工程系","科学技术系"],
+			["天文系","新闻系","地理系"],
+			["通迅系","无线电系","无线转播系"]
+		];
+
+		var classes = [
+			[
+				["物理1班","物理2班","物理3班"],
+				["自动化系1班","自动化系2班"],
+				["计算机系1班","计算机系2班","计算机系3班","计算机系4班"],
+				["软件工程1班","软件工程2班","软件工程3班","软件工程4班"]
+			],
+			[
+				["天文系1班","天文系2班","天文系3班"],
+				["新闻系1班","新闻系2班"],
+				["地理系1班","地理系2班","地理系3班","地理系4班"]
+			],
+			[
+				["通迅系1班","通迅系2班","通迅系3班"],
+				["无线电系1班","无线电系2班"],
+				["无线转播系1班","无线转播系2班","无线转播系3班","无线转播系4班"]
+			]
+		];
+		
+		var a = [
+			{
+				school:"清华大学",
+				xi:["物理系","自动化系","计算机系","软件工程系","科学技术系"]
+			},
+			{
+				school:"北京大学",
+				xi:["天文系","新闻系","地理系"]
+			},
+			{
+				school:"北京邮电",
+				xi:["通迅系","无线电系","无线转播系"]
+			},
+		];
+		
+		var b = [
+			{
+				xi:"物理系",
+				classes:["物理1班","物理2班","物理3班"]
+			},
+			{
+				xi:"自动化系",
+				classes:["自动化系1班","自动化系2班"]	
+			},
+			{
+				xi:"计算机系",
+				classes:["计算机系1班","计算机系2班","计算机系3班","计算机系4班"]	
+			},
+			{
+				xi:"软件工程系",
+				classes:["软件工程1班","软件工程2班","软件工程3班","软件工程4班"]	
+			},
+			{
+				xi:"科学技术系"	
+			}
+		]
+		var c = [
+			{
+				xi:"天文系",
+				classes:["天文系1班","天文系2班","天文系3班"]
+			},
+			{
+				xi:"新闻系",
+				classes:["新闻系1班","新闻系2班"]
+			},
+			{
+				xi:"地理系",
+				classes:["地理系1班","地理系2班","地理系3班","地理系4班"]	
+			}
+		]
+		var d = [
+			{
+				xi:"通迅系",
+				classes:["通迅系1班","通迅系2班","通迅系3班"]
+			},
+			{
+				xi:"无线电系",
+				classes:["无线电系1班","无线电系2班"]
+			},
+			{
+				xi:"无线转播系",
+				classes:["无线转播系1班","无线转播系2班","无线转播系3班","无线转播系4班"]	
+			}
+		];
+		
+		window.onload = function() {
+			
+			var school = document.getElementById('school');
+			var xi = document.getElementById('xi');
+			var classes = document.getElementById('classes');
+			
+			for (var i = 0;i < a.length;i ++) {
+					
+				var opt = new Option(a[i].school,a[i].school);
+				
+				school.add(opt);
+			}
+			
+			school.onchange = function() {
+			
+				xi.options.length = 1;
+				classes.options.length = 1;
+				
+				var index = school.selectedIndex;
+				
+				if (index == 0) {
+					return;
+				}
+				
+				var xis = a[index-1].xi;
+			
+				for (var i = 0;i < xis.length;i ++) {
+				
+					var opt2 = new Option(xis[i],xis[i]);
+					
+					xi.add(opt2);
+				}
+			}
+			
+			xi.onchange = function() {
+				
+				classes.options.length = 1;
+				
+				var index = xi.selectedIndex;
+				
+				if (index == 0) {
+					return;
+				}
+				
+				var s;
+				
+				if (school.value == '清华大学') {
+					s = b;
+				} else if (school.value == '北京大学') {
+					s = c;
+				} else if (school.value == '北京邮电') {
+					s = d;
+				}
+				
+				var classess = s[index - 1].classes;
+				
+				for (var i = 0;i < classess.length;i ++) {
+						
+					var opt3 = new Option(classess[i],classess[i]);
+					
+					classes.add(opt3);
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

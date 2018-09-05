@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+body{
+	background: orange;
+}
+
+/*设置段落文字的样式*/
+p{
+	color: green;
+	font-size: 12px;
+	background: #ccc;
+}

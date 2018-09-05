@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1" align="left" index="1001">
+			你好，中国
+		</p>
+		
+		<input type="button" value="读取属性" id="btn1" />
+		<input type="button" value="设置属性" id="btn2" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					var result = $('#p1').attr('align');
+					result = $('#p1').attr('index');
+					
+					alert(result);
+					
+				});	
+				
+				$('#btn2').click(function() {
+					
+					$('#p1').attr('align','center');
+					$('#p1').attr('index','1002');
+					
+				});
+				
+			});			
+		</script>		
+	</body>
+</html>

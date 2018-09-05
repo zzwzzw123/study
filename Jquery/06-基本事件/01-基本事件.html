@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="bind" id="btn1" />
+		<input type="button" value="unbind" id="btn2" />
+				
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			$(function() {
+				
+				//基本事件注册
+				$('#btn1').bind('click',function(e) {
+					
+					alert('btn1按钮被单击');
+					
+				});
+				
+				
+				$('#btn2').bind('click',function(e) {
+										
+					//解除btn1的所有注册事件
+					$('#btn1').unbind();
+					
+				});				
+				
+			});			
+		</script>
+	</body>
+</html>

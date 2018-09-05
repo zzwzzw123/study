@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1">
+			<font color="red">hello,world</font>
+		</p>
+		
+		<input type="button" value="设置html" onclick="m1();"/>
+		<input type="button" value="读取html" onclick="m2();"/>
+		<input type="button" value="设置outerhtml" onclick="m3();"/>
+		<input type="button" value="读取outerhtml" onclick="m4();"/>
+		<input type="button" value="设置text" onclick="m5();"/>
+		<input type="button" value="读取text" onclick="m6();"/>
+		<script type="text/javascript">
+			function m1() {
+				
+				var p1 = document.getElementById('p1');
+				
+				p1.innerHTML = '<b>你好，世界</b>';
+			}
+			
+			function m2() {
+				var p1 = document.getElementById('p1');
+				alert(p1.innerHTML);
+			}
+			
+			function m3() {
+				
+				var p1 = document.getElementById('p1');
+				
+				p1.outerHTML = '<b>你好，世界</b>';
+			}
+			
+			function m4() {
+				var p1 = document.getElementById('p1');
+				alert(p1.outerHTML);
+			}
+			
+			function m5() {
+				
+				var p1 = document.getElementById('p1');
+				
+				p1.innerText = '<b>你好，世界</b>';
+			}
+			
+			function m6() {
+				var p1 = document.getElementById('p1');
+				alert(p1.innerText);
+			}
+		</script>
+	</body>
+</html>

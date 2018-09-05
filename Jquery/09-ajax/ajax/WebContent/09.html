@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+
+		<input type="button" value="json请求1" id="btn1"/>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					//请求json3.txt,直接使用getJSON方法
+					$.getJSON('json3.txt',function(json) {
+						
+						//获得list数组
+						var emps = json.list;
+						
+						$.each(emps,function(index,el) {
+							
+							alert(el.empno + ',' + el.ename+ ','
+							+ el.salary + ',' + el.hiredate);
+							
+						});
+						
+					});
+					
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="t1"/>
+		<input type="button" value="click me" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				//通过id得到网页元素对象
+				var t1obj = document.getElementById('t1');
+				
+				//操作value值
+//				t1obj.value = 'tom';
+				
+				alert('输入的是：' + t1obj.value);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style type="text/css">
+			body {
+				font-size: 14px;
+			}
+			
+			table {
+				width: 960px;
+				margin: 0px auto;
+				border-collapse: collapse;
+				background: #999;
+			}
+			
+			div {
+				width: 960px;
+				margin: 10px auto 15px;
+				text-align: center;
+			}
+			
+			h3 {
+				margin: 10px auto;
+			}
+			
+			table td {
+				border: 1px solid #382F27;
+				text-align: center;
+				padding: 3px 3px;
+			}
+			
+			table input[type=text] {
+				width: 95%;
+			}
+			/* 高亮样式 */
+			
+			.hl {
+				background: #ccc;
+			}
+			
+			h3 {
+				margin: 0px;
+				padding: 0px;
+				font-size: 18px;
+				font-weight: bold;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table id="table1">
+			<tr>
+				<td colspan="8">
+					<h3>项目列表</h3>
+				</td>
+			</tr>
+			<tr>
+				<td>选择</td>
+				<td>编号</td>
+				<td>项目名称</td>
+				<td>项目承担部门</td>
+				<td>责任人</td>
+				<td>项目预算</td>
+				<td>开始日期</td>
+				<td>备注</td>
+			</tr>
+			<tr>
+				<td colspan="8">
+
+					<span id="pageInfo">共12条记录，每页7条，共2页，当前第1页</span>
+
+					<a href="javascript:void(0);" id="firstBtn">首页</a>
+					<a href="javascript:void(0);" id="prevBtn">上页</a>
+					<a href="javascript:void(0);" id="nextBtn">下页</a>
+					<a href="javascript:void(0);" id="lastBtn">末页</a>
+
+					<select id="pageSelect">
+					
+				</select>
+
+				</td>
+			</tr>
+		</table>
+
+		<div><input type="button" id="btn" value="项目维护"></div>
+
+		<table id="table2">
+			<tr>
+				<td colspan="4">
+					<h3>项目信息维护</h3>
+				</td>
+			</tr>
+			<tr>
+				<td>项目名称</td>
+				<td><input type="text" id="name"></td>
+				<td>项目承担部门</td>
+				<td><input type="text" id="department"></td>
+			</tr>
+			<tr>
+				<td>责任人</td>
+				<td><input type="text" id="person"></td>
+				<td>项目预算</td>
+				<td><input type="text" id="budget"></td>
+			</tr>
+			<tr>
+				<td>开始日期</td>
+				<td><input type="text" id="date"></td>
+				<td>备注</td>
+				<td><input type="text" id="remark"></td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<input type="button" id="add" value="添加">
+					<input type="button" id="update" value="修改" disabled>
+					<input type="button" id="del" value="删除" disabled>
+					<input type="button" id="search" value="查询">
+					<input type="button" id="clear" value="清除">
+				</td>
+			</tr>
+		</table>
+
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script>
+			$(function() {
+
+				//项目数据
+				var data;
+
+				//分页变量
+				var recordCount; //总记录数
+				var pageSize = 7; //每页多少条
+				var pageCount; //共几页
+				var pageNum = 1; //当前页码
+
+				/*
+				 * ajax的新版语法
+				 */
+				$.ajax({
+						async: false, //同步请求
+						timeout: 4000, //请求超时设置
+						url: 'data.json', //请求的url
+						type: 'GET', //请求方式 GET POST
+						dataType: 'json' //响应的类型，例如text xml json				
+					})
+					.done(function(json, status, xhr) { //链式写法
+
+						data = json;
+
+					})
+					.fail(function(xhr, errorStatus, errorText) { //链式写法
+						//失败回调	
+						if (errorStatus == 'timeout') {
+							alert('请求超时，请重新尝试');
+						} else {
+							alert('请求失败，' + errorStatus + ',' + errorText);
+						}
+					});
+
+				//计算分页信息
+				recordCount = data.length;
+				pageCount = Math.ceil(recordCount / pageSize);
+
+				/**
+				 * 显示数据函数
+				 */
+				function showData() {
+
+					//计算当前页的数据的起始下标和终止下标
+					var start = pageSize * (pageNum - 1);
+					var end = start + pageSize;
+
+					//得到当前页的数据数组
+					var currData = data.slice(start, end);
+
+					//变量追加数据行
+					$.each(currData, function(index, el) {
+
+						//生成一个tr
+						var tr = '';
+						tr += '<tr>';
+						tr += '	<td><input type="radio" name="check"></td>';
+						tr += '	<td>' + el.num + '</td>';
+						tr += '	<td>' + el.name + '</td>';
+						tr += '	<td>' + el.department + '</td>';
+						tr += '	<td>' + el.person + '</td>';
+						tr += '	<td>' + el.budget + '</td>';
+						tr += '	<td>' + el.date + '</td>';
+						tr += '	<td>' + el.remark + '</td>';
+						tr += '</tr>';
+
+						//追加到数据行的末尾
+						$('#table1 tr:last').before(tr);
+
+					});
+
+					//动态设置分页信息（共XX条数据，每页XX条，共XX页，当前是第XX页）
+					$('#pageInfo').html('共' + recordCount + '条数据，每页' +
+						pageSize + '条，共' + pageCount +
+						'页，当前是第' + pageNum + '页');
+
+					//动态显示分页按钮（首页 上页 下页 末页）
+					if (pageNum == 1) {
+						$('#firstBtn,#prevBtn').css('display', 'none');
+						$('#lastBtn,#nextBtn').css('display', 'inline');
+					}
+
+					if (pageNum != 1 && pageNum != pageCount) {
+						$('#firstBtn,#prevBtn').css('display', 'inline');
+						$('#lastBtn,#nextBtn').css('display', 'inline');
+					}
+
+					if (pageNum == pageCount) {
+						$('#lastBtn,#nextBtn').css('display', 'none');
+						$('#firstBtn,#prevBtn').css('display', 'inline');
+					}
+				}
+
+				//初始调用
+				showData();
+
+				//动态生成列表option
+				for (var i = 1; i <= pageCount; i++) {
+					$('#pageSelect').append('<option value="' + i + '">' + i + '</option>');
+				}
+				
+				$('#pageSelect').val(pageNum);
+				
+				//清空当前表格数据行
+				function clear() {
+
+					$('#table1 tr:gt(1)').not(':last').remove();
+
+				}
+
+				//分页按钮单击事件
+				$('#firstBtn').click(function() {
+					clear();
+					pageNum = 1;
+					$('#pageSelect').val(pageNum).select;
+					showData();
+				});
+
+				$('#prevBtn').click(function() {
+					clear();
+					pageNum -= 1;
+					$('#pageSelect').val(pageNum).select;
+					showData();
+				});
+
+				$('#nextBtn').click(function() {
+					clear();
+					pageNum += 1;
+					$('#pageSelect').val(pageNum).select;
+					showData();
+				});
+
+				$('#lastBtn').click(function() {
+					clear();
+					pageNum = pageCount;
+					$('#pageSelect').val(pageNum).select;
+					showData();
+				});
+
+				$('#pageSelect').change(function() {
+
+					clear();
+
+					var index = this.selectedIndex;
+
+					pageNum = index + 1;
+
+					showData();
+
+				});
+
+				//增加功能
+				$('#add').click(function() {
+
+					//获得表单数据
+					var name = $('#name').val();
+					var department = $('#department').val();
+					var person = $('#person').val();
+					var budget = $('#budget').val();
+					var date = $('#date').val();
+					var remark = $('#remark').val();
+
+					//获得数据行的最后一行的编号+1，得到新增行的编号
+					var num = 1;
+
+					if ($('#table1 tr').length > 3) {
+						num = parseInt($('#table1 tr:last').prev().find('td').eq(1).text()) + 1;
+					}
+
+					//生成一个tr
+					var tr = '';
+					tr += '<tr>';
+					tr += '	<td><input type="radio" name="check"></td>';
+					tr += '	<td>' + num + '</td>';
+					tr += '	<td>' + name + '</td>';
+					tr += '	<td>' + department + '</td>';
+					tr += '	<td>' + person + '</td>';
+					tr += '	<td>' + budget + '</td>';
+					tr += '	<td>' + date + '</td>';
+					tr += '	<td>' + remark + '</td>';
+					tr += '</tr>';
+
+					//追加到数据行的末尾
+					$('#table1 tr:last').before(tr);
+
+					//调用清除函数	
+					clr();
+
+				});
+
+				//事件委托给所有单选按钮添加单击事件（表单显示数据）	
+				$('#table1').on('click', ':radio[name=check]', function() {
+
+					//高亮当前选中的行tr
+					highlight();
+
+					//提取当前tr的内容显示到表单中
+					var tds = $(this).parents('tr').find('td');
+
+					$('#name').val(tds.eq(2).text());
+					$('#department').val(tds.eq(3).text());
+					$('#person').val(tds.eq(4).text());
+					$('#budget').val(tds.eq(5).text());
+					$('#date').val(tds.eq(6).text());
+					$('#remark').val(tds.eq(7).text());
+
+					//修改，删除按钮可用
+					$('#update,#del').prop('disabled', false);
+
+				});
+
+				//修改功能
+				$('#update').click(function() {
+
+					//获得表单数据
+					var name = $('#name').val();
+					var department = $('#department').val();
+					var person = $('#person').val();
+					var budget = $('#budget').val();
+					var date = $('#date').val();
+					var remark = $('#remark').val();
+
+					//替换当前修改行的td的内容
+					var tds = $('.hl').find('td');
+
+					tds.eq(2).text(name);
+					tds.eq(3).text(department);
+					tds.eq(4).text(person);
+					tds.eq(5).text(budget);
+					tds.eq(6).text(date);
+					tds.eq(7).text(remark);
+
+					//调用清除函数	
+					clr();
+
+				});
+
+				//删除功能
+				$('#del').click(function() {
+
+					var flag = window.confirm('确定要删除此条数据吗？');
+
+					if (!flag) {
+						return;
+					}
+
+					//删除当前选中的行
+					$('.hl').remove();
+
+					//调用清除函数	
+					clr();
+
+				});
+
+				//清除功能
+				$('#clear').click(function() {
+					clr();
+				});
+
+				/**
+				 * 清除函数
+				 */
+				function clr() {
+
+					//清除表单数据
+					$('#table2 :text').val('');
+
+					//清除高亮 
+					$('.hl').removeClass('hl');
+
+					//取消单选选中
+					$('#table1 :radio').prop('checked', false);
+
+					//修改，删除按钮不可用
+					$('#update,#del').prop('disabled', true);
+				}
+
+				/**
+				 * 高亮行函数，选中行高亮
+				 */
+				function highlight() {
+
+					$('.hl').removeClass('hl');
+
+					$('#table1 :radio:checked').parents('tr').addClass('hl');
+
+				}
+
+			});
+		</script>
+	</body>
+
+</html>

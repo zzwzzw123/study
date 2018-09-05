@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/**
+			 * 传入一个任意字符串，返回这个字符串的后三位
+			 */
+			
+			/*function getLasThree() {
+				var a = prompt('请输出一个字符串： ');
+				for (var i = 0;i <= 3;i ++) {
+					document.write(a.charAt(a.length - i));
+				}
+			}
+			getLasThree();*/
+			
+			/**
+			 * 反写字符串,传入一个任意字符串，返回反写字符串
+			 * 例如：abcd==>dcba
+			 */
+			
+/*			function reverseStr() {
+				var a = prompt('请输出一个字符串： ');
+					for (var i = 0;i < a.length;i ++) {
+					document.write(a[a.length - 1 - i] + '<br />');
+				}
+				
+			}
+			reverseStr();*/
+			
+			/**
+			 * 隐藏IP的最后一位
+			 * 例如：202.960.65.68==>202.96.64.*
+			 */
+			
+			/*function getIP() {
+				
+				var a = prompt('请输入一个ip')；
+				var b = a.split('.');
+				for (var i = 0;i < b.length;i ++) {
+					b[b.length - 1] = '*';
+				}
+				document.write(b[b.length - 4] + '.' + b[b.length - 3] + '.' + b[b.length - 2] + '.' + b[b.length - 1]);
+			}
+			getIP();*/
+			
+			/**
+			 * 用户名合法验证，传入一个用户名
+			 * 判断是否是小写字母开头，后面可以是小写字母(97-122)数字(48-57)下划线(95)，6~12位
+			 * 合法返回true，不合法返回false
+			 */
+			function checkUserNanme() {
+				var a = prompt('请输入用户名');
+				if(a.charCodeAt(0) <= 122 && a.charCodeAt(0) >= 97){
+					if(a.length >= 6 && a.length <= 12) {
+						for(var i = 0;i <= a.length - 1;i ++) {
+							if(a.charCodeAt(a[i]) == 95 || a.charCodeAt(a[i]) >=48 && a.charCodeAt(a[i]) <= 57 || a.charCodeAt(a[i]) >= 97 && a.charCodeAt(a[i]) <= 122) {
+								alert('合法');
+								return;
+							} else {
+								alert('不合法');
+								return;
+							}
+						}
+					} else {
+						alert('不合法');
+						return;
+					}
+				} else {
+					alert('不合法');
+					return;
+				}
+			}
+			checkUserNanme();
+		</script>
+	</body>
+</html>

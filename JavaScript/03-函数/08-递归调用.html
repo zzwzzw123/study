@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//递归调用
+			function getResulr(n) {
+				
+				//判断如果n==1，直接返回1
+				if(n == 1){
+					return 1;
+				}
+				
+				return n * getResulr(n - 1);//递归调用
+			}
+			
+			var result = getResulr(5);
+			alert('阶乘的结果是：' + result);
+		</script>
+	</body>
+</html>

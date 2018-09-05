@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p class="item">段落文字1</p>
+			<p class="item">段落文字2</p>
+			<p class="item">段落文字3</p>
+		</div>
+		
+		<input type="button" value="querySelector" onclick="m1();"/>
+		<input type="button" value="querySelectorAll" onclick="m2();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				
+				//直接使用css选择器，仅返回第一个元素
+				var ps = document.querySelector('#div1 .item');
+				
+				alert(ps.outerHTML);
+				
+			}
+			
+			function m2() {
+				
+				//直接使用css选择器
+				var ps = document.querySelectorAll('#div1 .item');
+				
+				for (var i = 0;i < ps.length;i ++) {
+					alert(ps[i].outerHTML);
+				}
+				
+				
+			}
+		</script>
+	</body>
+</html>

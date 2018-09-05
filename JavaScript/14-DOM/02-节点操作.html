@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p id="p1">段落内容1</p>
+			<p id="p2">段落内容2</p>
+			<p id="p3">段落内容3</p>
+		</div>
+		
+		<input type="button" value="添加节点" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			
+			var i = 1;
+			
+			function m1() {
+				
+				var div1 = document.getElementById('div1');
+				var p3 = document.getElementById('p3');
+				//动态创建p元素
+				var p = document.createElement('p');
+				
+				//动态创建文本节点
+				p.innerHTML = 'hello,world' + i;
+				
+				//设置属性
+				p.align = 'center';
+				
+				//追加子节点到p3元素之前
+				div1.insertBefore(p,p3)
+				
+				i ++;
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+
+	<body>
+		<form id="form1">
+			用户名
+			<input type="text" name="username" id="username"/>
+			<span id="msg"></span>
+			<br />
+			密&nbsp;&nbsp;码
+			<input type="password" name="userpwd" id="userpwd"/>
+		</form>	
+		
+		<script type="text/javascript">
+			
+			/**
+			 *返回xhr对象 
+			 */
+			function getxhr() {
+				
+				var xhr;
+				
+				if(window.XMLHttpRequest) {
+					
+					xhr = new XMLHttpRequest();//w3c浏览器
+					
+				} else {
+					
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");//IE
+					
+				}
+				
+				return xhr;
+			}
+			
+			//网页加载事件
+			window.onload = function() {
+				
+				//获得dom对象
+				var username = document.getElementById('username');
+				var msg = document.getElementById('msg');
+				
+				//用户名改变，调用后端程序检查用户名
+				username.onchange = function() {
+					
+					//判断用户名是否为空
+					if(username.value == '') {
+						msg.innerHTML = '用户名不能为空';
+						msg.style.color = 'red';
+						return;
+					}
+					
+					//获得xhr对象
+					var xhr = getxhr();
+					
+					//请求url
+					var url = "CheckUsernameServlet?username=" + username.value;
+					
+					//设置请求的方式和请求url
+					xhr.open('GET',url);
+					
+					/**
+					 * 第一种
+					 */
+					//状态不为4时，显示图片
+					/*if (xhr.readyState <= 4) {
+							var img = document.createElement('img');
+							img.setAttribute('src','img/loading-0.gif');
+							msg.appendChild(img);
+					}*/
+					
+					/**
+					 * 第二种
+					 */
+					//文本框只读
+					username.readOnly = true;
+					
+					//显示loading图片
+					msg.innerHTML = '<img src="img/loading-0.gif"/>';
+					
+					//事件回调
+					xhr.onreadystatechange = function() {
+						
+						//如果状态是4
+						if (xhr.readyState == 4) {
+							//并且状态码是200
+							if(xhr.status == 200) {
+								
+								//根据响应的结果不同，显示不同颜色的提示
+								if (xhr.responseText == '1') {
+									msg.innerHTML = '此用户名已经被占用';
+									msg.style.color = 'red';
+								} else {
+									msg.innerHTML = '此用户名可用使用';
+									msg.style.color = 'green';
+								}
+								
+							} else {
+								alert('请求失败，错误码：' + xhr.status);
+							}
+							
+						}
+						
+						
+
+					}
+					
+					//发出请求
+					xhr.send();				
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+
+		<input type="button" value="json请求1" id="btn1"/>
+		
+		<div id="div1"></div>
+		
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				/**
+				 * 直接添加节点
+				 */
+				$('#btn1').click(function() {
+
+					//请求json2.txt,直接使用getJSON方法
+					$.getJSON('json2.txt',function(json) {
+						
+						//创建table
+						$('#div1').append("<table border='1' width='500'></table>");
+						
+						$.each(json,function(index,el) {
+
+							$('table').append('<tr></tr>');
+							$('table').find('tbody').find('tr').eq(index).append('<td>' + el.hiredate + '</td>');
+							$('table').find('tbody').find('tr').eq(index).append('<td>' + el.empno + '</td>');
+							$('table').find('tbody').find('tr').eq(index).append('<td>' + el.ename + '</td>');
+							$('table').find('tbody').find('tr').eq(index).append('<td>' + el.salary + '</td>');
+							
+						});
+						
+					});
+					
+				});
+				
+				/**
+				 * 先创建节点对象后添加节点
+				 */
+				/*$('#btn1').click(function() {
+					
+					//请求json2.txt，把数据生成一个表格显示到div1中
+					$.getJSON('json2.txt',function(json) {
+						
+						//创建table
+						var table = $('<table border="1" width="500"></table>');
+												
+						$.each(json, function(index,el) {
+							
+							var tr = $('<tr></tr>');
+							
+							tr.append('<td>' + el.empno + '</td>');
+							tr.append('<td>' + el.ename + '</td>');
+							tr.append('<td>' + el.salary + '</td>');
+							tr.append('<td>' + el.hiredate + '</td>');
+														
+							table.append(tr);
+						});	
+						
+						$('#div1').append(table);
+						
+					});										
+					
+				});*/
+				
+			});
+		</script>
+	</body>
+</html>

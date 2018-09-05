@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body bgcolor="orange">
+		这是框架frame的内容
+		
+		<input type="button" value="操作父窗口内容" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				
+				//window.parent代表父窗口对象
+				var p1 = window.parent.document.getElementById('p1');
+				
+				p1.innerHTML = 'hello,world';
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 *用户输入三个数字 
+			 */
+			var a = prompt('请输入值1');
+			var b = prompt('请输入值2');
+			var c = prompt('请输入值3');
+			
+			a = parseInt(a);
+			b = parseInt(b);
+			c = parseInt(c);
+			
+			//得到a和b之间的最大值
+			var max = a > b ? a : b;
+			//得到上一个最大值和c之间的最大值
+			max = max > c ? max : c;
+			alert('最大值是:' + max);
+		</script>
+	</body>
+</html>

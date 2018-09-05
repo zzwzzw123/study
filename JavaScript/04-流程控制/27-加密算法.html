@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		某公司电话号码需要加密，电话号码固定四位，加密的规则如下
+		1、每位数字+5
+		2、加5之后模10的余数代替该数字
+		3、把第一位和第四位交换，第三位和第二位交换
+		<br /><br />
+		<input type="text" id="before" placeholder="加密前的数字"/>
+		<input type="text" id="after" placeholder="加密后的数字"/>
+		<input type="button" value="加密" onclick="encrypt();"/>
+		<script type="text/javascript">
+			/**
+			 *加密功能 
+			 */
+			function encrypt() {			
+				var a = parseInt(before.value / 1000);
+				var b = parseInt(before.value / 100 % 10);
+				var c = parseInt(before.value / 10 % 10);
+				var d = parseInt(before.value % 10);
+				var e = (d + 5) % 10;
+				var f = (c + 5) % 10;
+				var g = (b + 5) % 10;
+				var h = (a + 5) % 10;
+				after.value = e * 1000 + f * 100 + g * 10 + h;
+			}
+		</script>
+	</body>
+</html>

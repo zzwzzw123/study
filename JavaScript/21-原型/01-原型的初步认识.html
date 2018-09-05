@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Person(name,age) {
+				
+				this.name = name;
+				this.age = age;
+				
+				this.run = function() {
+					alert(this.name + '奔跑');
+				}
+				
+			}
+			
+			//在原型对象中添加一个方法
+			Person.prototype.eat = function() {
+				alert(this.name + '在吃东西');
+			}
+			
+			var p1 = new Person('tom',27);
+			var p2 = new Person('jack',29);
+			
+			console.log(p1.__proto__);
+			console.log(p2.__proto__);
+			console.log(Person.prototype);
+			
+			//alert(p1.__proto__ == p2.__proto__);//true
+			//alert(p1.__proto__ == Person.prototype);//true
+			//alert(Person == Person.prototype.constructor);//ture
+			//alert(p1.run == p2.run);//false
+			//alert(p1.eat == p2.eat);//true
+			
+			//p1.eat();
+			//p2.eat();
+			
+			alert(p1.toString());
+			alert(p2.toString());
+			
+		</script>
+	</body>
+</html>

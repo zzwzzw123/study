@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<img src="../images/1.jpg" id="img1" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			
+			window.onload = function() {
+				
+				alert('文档加载完毕');
+				
+			}
+						
+			$(document).ready(function() {
+				
+				alert('文档就绪完毕');
+				
+			});	
+			
+			//简化文档就绪事件
+			$(function() {
+				
+				alert('文档就绪完毕！！！');
+				
+			});
+			
+			
+			var img1 = document.getElementById('img1');
+			
+			img1.onload = function() {
+				
+				alert('图片加载完毕');
+				
+			}
+			
+		</script>
+		
+	</body>
+</html>

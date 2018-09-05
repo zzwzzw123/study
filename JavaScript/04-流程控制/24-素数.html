@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 素数：只能被1和本身整除的数，不能被其他任何数字整除
+			 * 例如：7 11 13
+			 * 求2~100之间的所有素数
+			 */
+			
+			for (var i = 2;i <= 100;i ++) {
+				var count = 0;
+				for (var a = 2;a < 100;a ++) {
+					if (i % a == 0) {
+						count = count + a;
+					}
+				}
+				if (count == i) {
+					document.write(count + '<br />');
+				}
+			}
+		</script>
+	</body>
+</html>

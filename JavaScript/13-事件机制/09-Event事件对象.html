@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="单击我" id="btn1"/>
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				//获得事件源对象
+				var btn1 = document.getElementById('btn1');
+				
+				btn1.onclick = function(e) {
+					
+					//利用逻辑或做兼容性
+					e = window.event || e;
+					
+					alert('事件类型： ' + e.type);
+					
+					//获得事件源对象
+					var currObj = e.target || e.srcElement;
+					currObj.value = 'hello,world';
+				}
+			}
+		</script>
+	</body>
+</html>

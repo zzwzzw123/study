@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: 12px;
+			}
+			
+			table {
+				width: 600px;
+				display: block;
+				margin: 20px auto;
+				border-collapse: collapse;
+			}	
+			
+			table td {
+				border: 1px solid #000;
+				height: 30px;
+			}	
+			
+			table tr td:first-child {
+				text-align: center;
+			}	
+		</style>
+	</head>
+	<body>		
+		<form id="form1" name="form1" action="xxx.jsp" method="get" 
+			enctype="application/x-www-form-urlencoded">
+			<table border="0" width="600" align="center"
+				cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="2" align="center">
+						请输入注册信息
+					</td>
+				</tr>
+				<tr>
+					<td width="100">用户名</td>
+					<td width="500">
+						<input type="text" id="username" name="username"
+							maxlength="6" placeholder="请输入用户名"
+							value="tom" size="20"/>						
+					</td>					
+				</tr>				
+				<tr>
+					<td width="100">性别</td>
+					<td width="500">
+						<label for="boy">
+							<input type="radio" id="boy" name="sex" value="男"/ checked>	先生
+						</label>
+						<label for="girl">
+							<input type="radio" id="girl" name="sex" value="女"/>女士
+						</label>
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">技能</td>
+					<td width="500">
+						<input type="checkbox" value="java" name="skill" checked/>java
+						<input type="checkbox" value="oracle" name="skill"/>oracle
+						<input type="checkbox" value="linux" name="skill" checked/>linux
+						<input type="checkbox" value="ssm" name="skill"/>ssm
+					</td>					
+				</tr>
+				<tr>
+					<td width="100">城市</td>
+					<td width="500">
+						<select name="city" id="city">
+							<option value="beijing">北京</option>
+							<option value="shanghai">上海</option>
+							<option value="shenzhen" selected>深圳</option>
+							<option value="guangzhou">广州</option>
+						</select>						
+					</td>					
+				</tr>					
+			</table>			
+		</form>
+		
+		<input type="button" value="读取文本框value值" id="btn1" />
+		<input type="button" value="设置文本框value值" id="btn2" />
+		
+		<input type="button" value="读取单选value值" id="btn3" />
+		<input type="button" value="设置单选选中" id="btn4" />
+		
+		<input type="button" value="读取复选value值" id="btn5" />
+		<input type="button" value="设置复选选中" id="btn6" />
+		
+		<input type="button" value="读取列表框value值" id="btn7" />
+		<input type="button" value="设置列表框选中" id="btn8" />
+		
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			$(function() {
+				
+				$('#btn1').click(function() {
+					
+					alert( $('#username').val() );
+					 
+				});	
+				
+				$('#btn2').click(function() {
+					
+					$('#username').val('中软国际');
+					
+				});
+				
+				$('#btn3').click(function() {
+					
+					var result = $('#form1 :radio[name=sex]:checked').val();
+					alert(result);
+					 
+				});	
+				
+				$('#btn4').click(function() {
+					
+					$('#form1 :radio[name=sex]').val(['女']);
+					
+				});
+				
+				$('#btn5').click(function() {
+										
+					var skills = $('#form1 :checkbox[name=skill]:checked');
+					
+					for (var i = 0;i < skills.length;i ++) {
+						
+						//用数组下标访问返回js原生对象
+//						alert( skills[i].value);
+						//alert( skills.get(i).value);
+						
+						//返回jq对象
+						alert( skills.eq(i).val());						
+					}
+					 
+				});	
+				
+				$('#btn6').click(function() {
+					
+					$('#form1 :checkbox[name=skill]').val(['java','ssm']);
+					
+				});
+				
+				$('#btn7').click(function() {
+										
+					var result = $('#city').val();
+					alert(result);
+					 
+				});	
+				
+				$('#btn8').click(function() {
+					
+					$('#city').val('guangzhou');
+					
+				});
+				
+			});			
+		</script>		
+	</body>
+</html>

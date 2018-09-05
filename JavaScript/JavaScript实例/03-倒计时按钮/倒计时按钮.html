@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		网页打开按钮的倒计时开始，倒计时到0的时候，按钮可用，文字变成“立即注册”
+		
+		<input id="btn1" type="button" value="还有10秒钟" disabled/>
+		
+		<script type="text/javascript">
+			var btn1 = document.getElementById('btn1');
+			var time = 10;
+			
+			var timerId = setInterval(function(){
+				
+				time --;
+				btn1.value = '还有' + time + '秒钟';
+								
+				if(time < 0){
+					btn1.value = '立即注册';
+					window.clearInterval(timerId);
+					btn1.disabled = false;
+				}
+				
+			},1000);
+			
+		</script>
+	</body>
+</html>

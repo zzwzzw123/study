@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			
+			#div1 {
+				width: 100px;
+				height: 100px;
+				background: #00CCCC;
+				border-radius: 50%;	
+				text-align: center;
+				line-height: 100px;	
+				position: absolute;	
+				top:40px;	
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="开始动画" id="btn1" />
+		<input type="button" value="停止动画" id="btn2" />
+		<input type="button" value="停止动画-2" id="btn3" />
+		<input type="button" value="停止动画-3" id="btn4" />
+		<input type="button" value="停止动画-4" id="btn5" />
+			
+		<div id="div1">
+			div1...
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function(){
+				
+				$('#btn1').on('click',function(e){
+					
+					$('#div1').animate({
+						left:400
+					},2000);
+					
+					$('#div1').animate({
+						top:400
+					},2000);
+					
+					$('#div1').animate({
+						width:400,
+						height:400
+					},2000);
+					
+				});
+				
+				$('#btn2').on('click',function(e){
+					
+					//仅停止当前动画，不会阻止下个动画执行
+					$('#div1').stop();
+					
+				});
+				
+				$('#btn3').on('click',function(e){
+					
+					//停止当前动画，	清除后面的动画队列
+					$('#div1').stop(true);
+					
+				});
+				
+				$('#btn4').on('click',function(e){
+					
+					//停止当前动画，	清除后面的动画队列，直接过渡到当前动画的最终状态
+					$('#div1').stop(true,true);
+					
+				});
+				
+				$('#btn5').on('click',function(e){
+					
+					//停止当前动画，	清除后面的动画队列，直接过渡动画队列的最终状态
+					$('#div1').finish();
+					
+				});
+				
+				
+			});			
+		</script>
+		
+	</body>
+</html>

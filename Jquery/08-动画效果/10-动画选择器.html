@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			
+			#div1 {
+				width: 100px;
+				height: 100px;
+				background: #00CCCC;
+				border-radius: 50%;	
+				text-align: center;
+				line-height: 100px;	
+				position: absolute;	
+				top:50px;	
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="自定义动画" id="btn1" />
+		<input type="button" value="设置颜色" id="btn2" />
+			
+		<div id="div1">
+			div1...
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function(){
+				
+				$('#btn1').on('click',function(e){
+					
+					$('#div1').delay(500).animate({
+						left:400
+					},2000);
+					
+					$('#div1').delay(1000).animate({
+						top:400
+					},2000);
+					
+				});
+				
+				$('#btn2').on('click',function(e){
+					
+					//:animated表示正在运动中的动画
+					$('#div1:animated').css('background','orange');
+					
+				});				
+				
+			});			
+		</script>
+		
+	</body>
+</html>

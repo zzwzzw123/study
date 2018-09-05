@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			for (var i = 1;i <= 100;i ++) {
+				document.write('<p>' + i + '</p>');	
+			}	
+			
+			document.onclick = function() {
+				
+				//垂直滚动条位置
+				var sTop = document.documentElement.scrollTop || document.body.scrollTop;
+				
+				alert(sTop);
+							
+			}
+			
+			//onscroll滚动条事件
+			window.onscroll = function() {
+				
+				var sTop = document.documentElement.scrollTop || document.body.scrollTop;
+				
+				document.title = sTop;		
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			for (var i = 1;i <= 100;i ++) {
+				document.write('<p>' + i + '</p>');
+			}
+			
+			document.onclick = function () {
+				
+				//网页宽度
+				var w = document.body.scrollWidth;
+				//网页高度
+				var h = document.body.scrollHeight;
+				
+				alert(w + ',' + h);
+			}
+			
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>		
+		<div style="display: none;">这是一个看不见的元素</div>
+		<div>这是一个看的见的元素</div>
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			
+			$('div:hidden').html('hello,world');
+			$('div:visible').html('你好，世界');
+				
+		</script>
+	</body>
+</html>

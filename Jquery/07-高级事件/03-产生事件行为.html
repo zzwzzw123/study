@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="btn1" id="btn1" />
+		<input type="button" value="btn2" id="btn2" />
+		<input type="button" value="btn3" id="btn3" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+						
+			$('#btn1').on('click',function() {
+				
+				alert('hello,world');
+				
+			});
+			
+			//产生事件行为
+			$('#btn2').click(function(){
+				
+				//让btn1产生单击事件
+				$('#btn1').trigger('click');
+				
+			});
+			
+			//产生事件行为简化写法
+			$('#btn3').click(function(){
+				
+				//让btn1产生单击事件
+				$('#btn1').click();
+				
+			});
+			
+			
+		</script>
+	</body>
+</html>

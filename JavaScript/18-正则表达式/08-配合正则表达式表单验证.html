@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				font-size: 12px;
+			}
+			
+			table {
+				border-collapse: collapse;
+			}
+			
+			table td {
+				border: 1px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="xxx.jsp" method="post" id="form1">
+			<table border="0" width="800" align="center">
+				<tr>
+					<td width="180" align="center">用户名</td>
+					<td>
+						<input type="text" id="username"/>
+						*
+						用户名小写字母开头，后面可以是小写字母数字下划线，6~12位
+					</td>
+				</tr>
+				<tr>
+					<td width="180" align="center">设置密码</td>
+					<td>
+						<input type="password" id="userpwd"/>
+						*
+						6~8位数字
+					</td>
+				</tr>
+				<tr>
+					<td width="180" align="center">确认密码</td>
+					<td>
+						<input type="password" id="userpwd2"/>
+						*
+						两次密码输入一致
+					</td>
+				</tr>
+				<tr>
+					<td width="180" align="center">固定电话</td>
+					<td>
+						<input type="text" id="phone"/>
+						区号-电话号码
+					</td>
+				</tr>
+				<tr>
+					<td width="180" align="center">注册金额</td>
+					<td>
+						<input type="text" id="money"/>
+						*
+						最多6位整数，2位小数，不能是负数
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="立即注册"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script type="text/javascript">
+			window.onload = function() {
+				var form1 = document.getElementById('form1');
+
+				form1.onsubmit = function() {
+					
+					var username = document.getElementById('username');
+					var userpwd = document.getElementById('userpwd');
+					var userpwd2 = document.getElementById('userpwd2');
+					var phone = document.getElementById('phone');
+					var money = document.getElementById('money');
+					
+					//用户名必填
+					if (username.value == '') {
+						alert('用户名不能为空');
+						return false;
+					}
+					
+					//用户名要求
+					var a = /^[a-z]([a-z]|[0-9]|_){5,11}$/;
+					if (!a.test(username.value)){
+						alert('用户名小写字母开头，后面可以是小写字母数字下划线，6~12位');
+						return false;
+					}
+					
+					//密码必填
+					if (userpwd.value == '') {
+						alert('密码不能为空');
+						return false;
+					}
+					
+					//密码要求
+					var b = /^[0-9]{6,8}$/;
+					if (!b.test(userpwd.value)){
+						alert('密码必须6~8位数字');
+						return false;
+					}
+					
+					//确认密码必填
+					if (userpwd2.value == '') {
+						alert('确认密码必须填写');
+						return false;
+					}
+					
+					//确认两次输入一致
+					if (userpwd2.value != userpwd.value) {
+						alert('两次输入密码不一致');
+						return false;
+					}
+					
+					//区号-电话号码验证
+					var c = /^(0\d\d{1,2})-(\d{7,8})$/;
+					if (!c.test(phone.value) && phone.value != '') {
+						alert('请输入正确的区号-电话号码');
+						return false;
+					}
+					
+					//注册金额必填
+					if (money.value == '') {
+						alert('注册金额不能为空');
+						return false;
+					}
+					
+					//注册金额要求
+					var d = /^((0|[1-9])\d{0,5}\.[0-9]{0,2})$/;
+					if (money.value == 0) {
+						return true;
+					} else if (!d.test(money.value)) {
+						alert('最多6位整数，2位小数，不能是负数');
+						return false;
+					}
+					
+					return true;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.onkeydown = function(e) {
+				
+				e = window.event || e;
+				
+				console.log('keyCode=' + e.keyCode);
+				
+				console.log('ctrl=' + e.ctrlKey);
+				console.log('shift=' + e.shiftKey);
+				console.log('alt=' + e.altKey);
+				
+				//判断ctrl+A
+				if (e.ctrlKey && e.keyCode == 65) {
+					alert('ctrl+A');
+				}
+				//判断shift+回车
+				if (e.shiftKey && e.keyCode == 13) {
+					alert('shift+回车');
+				}
+			}			
+		</script>
+	</body>
+</html>

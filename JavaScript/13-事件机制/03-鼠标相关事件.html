@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="鼠标悬停" 
+			onmouseover="this.style.color='red';"
+			onmouseout="this.style.color='#000';"/>
+		
+		<input type="button" value="鼠标按下" 
+			onmousedown="this.style.color='red';"
+			onmouseup="this.style.color='#000';"/>
+			
+		<input type="button" value="鼠标移动观察标题栏" 
+			onmousemove="document.title=(new Date()).getTime();"/>
+	</body>
+</html>

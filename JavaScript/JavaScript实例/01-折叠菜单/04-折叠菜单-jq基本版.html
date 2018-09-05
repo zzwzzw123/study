@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: 14px;
+			}
+			
+			ul,li {
+				list-style-type: none;
+			}
+			
+			#menu {
+				width: 200px;
+				margin: 20px auto;
+				border: 1px solid #ccc;
+			}
+			
+			#menu p {
+				line-height: 26px;
+				background: #eee;
+				border-bottom:1px solid #ccc;
+				font-weight: bold;
+				cursor: pointer;
+				padding-left: 10px;
+			}
+			
+			#menu ul {
+				display: none;
+			}
+			
+			#menu ul li {
+				line-height: 24px;
+				padding-left: 5px;
+			}			
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			<div>				
+				<p>Web前端</p>
+				<ul style="display: block;">
+					<li>html</li>
+					<li>css</li>
+					<li>JavaScript</li>
+					<li>Jquery</li>
+					<li>Vue</li>
+				</ul>				
+			</div>
+			<div>				
+				<p>后台开发</p>
+				<ul>
+					<li>java</li>
+					<li>php</li>
+					<li>python</li>
+					<li>ruby</li>
+					<li>nodejs</li>
+				</ul>				
+			</div>
+			<div>			
+				<p>数据库</p>
+				<ul>
+					<li>Oracle</li>
+					<li>SqlServer</li>
+					<li>MySql</li>
+					<li>db2</li>
+					<li>redis</li>
+				</ul>			
+			</div>
+		</div>
+		
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				
+				//标题的单击事件
+				$('#menu p').click(function() {
+					
+					//隐藏其他
+					$(this).parents('div').siblings().find('ul').slideUp(1000);
+					
+					//显示掩藏当前的
+					$(this).next('ul').slideToggle(1000);
+					
+				});
+				
+			});
+		</script>
+	</body>
+</html>

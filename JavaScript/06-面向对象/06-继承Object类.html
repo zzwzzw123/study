@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//声明类
+			function Person(name,age) {
+				//属性声明
+				this.name = name;
+				this.age = age;
+				
+				//声明方法
+				this.eat = function(food) {
+					alert(this.name + '吃' + food);
+				}
+				
+				this.run = function() {
+					alert(this.name + '跑步'); 
+				}
+				
+				this.jump = function() {
+					this.run();
+					alert('跳跃');
+				}
+			}
+			
+			//创建对象实例
+			var p1 = new Person('tom',27);
+			
+			//使用从Object类
+			中继承的类
+			console.log(p1.toString());
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p class="item">段落文字1</p>
+		<p class="item">段落文字2</p>
+		<p class="item">段落文字3</p>
+		<div class="item">这是div1</div>
+		<div class="item">这是div2</div>
+		<div class="item">这是div3</div>
+		
+		<input type="button" value="获得对象" onclick="m1();"/>
+		
+		<script type="text/javascript">
+			function m1() {
+				var  ps = document.getElementsByClassName('item');
+				alert('元素的个数' + ps.length);
+				for (var i = 0;i< ps.length;i ++) {
+					alert(ps[i].innerHTML);
+					ps[i].align = 'center';
+				}
+			}
+		</script>
+	</body>
+</html>

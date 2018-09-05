@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = 'abcdefg';
+			
+			console.log(str.charAt(2));//c
+			console.log(str.charCodeAt(2));//99	
+			console.log(String.fromCharCode(65));//A
+			
+			str = 'abcdefgabcd';
+			
+			console.log(str.indexOf('cd'));//2
+			console.log(str.lastIndexOf('cd'));//9
+			
+			console.log(str.length);//11
+			
+			console.log(str.substr(3));//defgabcd
+			console.log(str.substr(3,3));//def
+			console.log(str.substr(-3));//bcd
+			
+			console.log(str.substring(3));//defgabcd
+			console.log(str.substring(3,6));//def
+			
+			str = 'abcdEFG'
+			console.log(str.toLowerCase());//abcdefg
+			console.log(str.toUpperCase());//ABCDEFG
+		</script>
+	</body>
+</html>

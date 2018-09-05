@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="hello,world" id="t1" disabled/>
+		
+		<input type="button" value="设置属性" onclick="m1();"/>
+		<input type="button" value="读取属性" onclick="m2();"/>
+		
+		<script type="text/javascript">
+			function m1 () {
+				var t1 = document.getElementById('t1');
+				t1.value = '你好，世界';
+				t1.size = 10;
+				t1.readOnly = true;
+				t1.disabled = false; 
+				
+				document.body.bgColor = 'orange';
+			}
+			
+			function m2 () {
+				var t1 = document.getElementById('t1');
+				alert(t1.value);
+				alert(t1.size);
+				alert(t1.readOnly);
+				alert(t1.disabled);
+				
+				alert(document.body.bgColor);
+			}
+		</script>
+	</body>
+</html>

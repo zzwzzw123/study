@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			
+			#div1 {
+				width: 100px;
+				height: 100px;
+				background: #00CCCC;
+				border-radius: 50%;	
+				text-align: center;
+				line-height: 100px;	
+				position: absolute;		
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="自定义动画" id="btn1" />
+			
+		<div id="div1">
+			div1...
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function(){
+				
+				$('#btn1').on('click',function(e){
+					
+					//属性值+=,-=可以实现递增递减效果
+					$('#div1').animate({
+						left:'+=200'
+					},2000);
+					
+				});
+								
+			});			
+		</script>
+		
+	</body>
+</html>

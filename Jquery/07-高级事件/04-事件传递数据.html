@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="btn1" id="btn1" />
+		<input type="button" value="btn2" id="btn2" />
+		
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script>
+			
+			//data就是一个形参
+			$('#btn1').click(function(e,username,age) {
+				
+				alert('btn1被单击：' + username + ',' + age);
+				
+			});
+			
+			$('#btn2').on('click',function() {
+				
+				//用数组传递事件的实参
+				$('#btn1').trigger('click',['tom',27]);
+				
+			});								
+			
+		</script>
+	</body>
+</html>

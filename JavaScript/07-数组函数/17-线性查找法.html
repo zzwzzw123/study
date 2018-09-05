@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var a = [12,3,29,66,181,257];
+			
+			var input = prompt('请输入元素的值： ');
+			
+			var index = -1;
+			
+			for (var i = 0;i < a.length;i ++) {
+				if(input == a[i]){
+					index = i;
+					break;
+				}
+			}
+			
+			alert('查找的结果是：' + index);
+		</script>
+	</body>
+</html>

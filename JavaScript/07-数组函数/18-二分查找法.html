@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var input = prompt('请输入要查找的元素');
+			
+			var a =[5,26,34,78,92,106,1218];
+			
+			var start = 0;//起始下标
+			var end = a.length - 1;//终止下标
+			var middle;//折半下标
+			
+			var index = -1;
+			
+			while (start <= end) {
+				//得到本次折半下标
+				middle = parseInt((start + end) / 2);
+				
+				if (input == a[middle]) {
+					index = middle;
+					break;
+				} else if (input > a[middle]) {
+					start = middle + 1;
+				} else if (input < a[middle]) {
+					end = middle - 1;
+				}
+				
+			}
+			
+			alert('查找的结果是' + index);
+			
+		</script>
+	</body>
+</html>
